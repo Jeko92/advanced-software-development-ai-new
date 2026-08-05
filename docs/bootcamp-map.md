@@ -7,9 +7,9 @@
 | — Markdown Editor                           | `apps/00-side-projects/markdown-editor`          | 🟢 ongoing |
 | — Music App                                 | `apps/00-side-projects/music-app`                | 🟢 ongoing |
 | — Q&A Forum                                 | `apps/00-side-projects/qa-forum`                 | 🟢 ongoing |
-| 0 Welcome / Leveling                        | `bootcamp/00-welcome`                            | ⬜         |
+| 0 Welcome / Leveling                        | `bootcamp/00-welcome`                            | 🟢         |
 | 1 TypeScript                                | `bootcamp/01-typescript`                         | ⬜         |
-| 1.1 TS Basics                               | `bootcamp/01-typescript/ts-basics`               | ⬜         |
+| 1.1 TS Basics                               | `bootcamp/01-typescript/ts-basics`               | 🟢         |
 | 1.2 Client-Side TS                          | `bootcamp/01-typescript/ts-client-side`          | ⬜         |
 | 1.3 Advanced Setup                          | `bootcamp/01-typescript/ts-advanced-setup`       | ⬜         |
 | 1.4 Recap Project                           | `apps/01-typescript`                             | ⬜         |
