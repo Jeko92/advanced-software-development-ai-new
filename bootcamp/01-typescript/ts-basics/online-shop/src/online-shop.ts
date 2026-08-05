@@ -1,4 +1,4 @@
-import { Order, Product } from './types.ts';
+import type { Order, Product } from './types.ts';
 
 export function orderTotal(order: Order): number {
   return order.items.reduce(
