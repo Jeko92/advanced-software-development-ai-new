@@ -33,6 +33,18 @@ importers:
         specifier: ^5.7.0
         version: 5.9.3
 
+  bootcamp/00-welcome:
+    devDependencies:
+      '@bootcamp/tsconfig':
+        specifier: workspace:*
+        version: link:../../packages/tsconfig
+      tsx:
+        specifier: ^4.19.0
+        version: 4.23.5
+      typescript:
+        specifier: ^5.7.0
+        version: 5.9.3
+
   packages/eslint-config:
     dependencies:
       '@eslint/js':
