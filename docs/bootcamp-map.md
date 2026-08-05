@@ -10,7 +10,7 @@
 | 0 Welcome / Leveling                        | `bootcamp/00-welcome`                            | 🟢         |
 | 1 TypeScript                                | `bootcamp/01-typescript`                         | ⬜         |
 | 1.1 TS Basics                               | `bootcamp/01-typescript/ts-basics`               | 🟢         |
-| 1.2 Client-Side TS                          | `bootcamp/01-typescript/ts-client-side`          | ⬜         |
+| 1.2 Client-Side TS                          | `bootcamp/01-typescript/ts-client-side`          | 🟢         |
 | 1.3 Advanced Setup                          | `bootcamp/01-typescript/ts-advanced-setup`       | ⬜         |
 | 1.4 Recap Project                           | `apps/01-typescript`                             | ⬜         |
 | 2 Introduction to Backend Web Development   | `bootcamp/02-backend`                            | ⬜         |
