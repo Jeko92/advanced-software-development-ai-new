@@ -1,0 +1,16 @@
+{
+  "name": "@bootcamp/00-welcome",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@bootcamp/tsconfig": "workspace:*",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}
