@@ -1,0 +1,8 @@
+{
+  "name": "@bootcamp/prettier-config",
+  "version": "1.0.0",
+  "description": "Shared Prettier configuration for the monorepo",
+  "main": "index.json",
+  "private": true,
+  "license": "MIT"
+}

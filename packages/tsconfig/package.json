@@ -1,0 +1,8 @@
+{
+  "name": "@bootcamp/tsconfig",
+  "version": "1.0.0",
+  "description": "Shared TypeScript compiler configurations for the monorepo",
+  "main": "base.json",
+  "private": true,
+  "license": "MIT"
+}

@@ -1,0 +1,1 @@
+{ "extends": "./base.json", "compilerOptions": { "module": "CommonJS", "types": ["node"] } }

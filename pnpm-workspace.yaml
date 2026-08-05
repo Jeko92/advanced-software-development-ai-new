@@ -1,0 +1,8 @@
+packages:
+  - "apps/0[1-8]-*"
+  - "apps/00-side-projects/*"
+  - "bootcamp/*/*"
+  - "packages/*"
+  - "playgrounds/*"
+allowBuilds:
+  esbuild: true

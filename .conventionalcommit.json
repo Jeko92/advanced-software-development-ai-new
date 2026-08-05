@@ -1,0 +1,29 @@
+{
+  "types": {
+    "chore": { "description": "Routine repository maintenance, tooling updates, or dependency bumps" },
+    "feat": { "description": "A new feature, application implementation, or challenge solution" },
+    "fix": { "description": "A bugfix in an application, utility package, or assignment" },
+    "refactor": { "description": "Code change that neither fixes a bug nor adds a feature" },
+    "docs": { "description": "Documentation updates across READMEs, ADRs, or internal notes" },
+    "style": { "description": "Formatting, missing semi-colons, whitespace (no logic changes)" },
+    "test": { "description": "Adding or correcting test suites" },
+    "perf": { "description": "A change that improves runtime performance or build speeds" },
+    "build": { "description": "Changes affecting Turborepo pipelines, pnpm workspaces, or compilers" },
+    "ci": { "description": "Changes to GitHub Actions workflows or PR validation scripts" },
+    "revert": { "description": "Reverts a previous commit history entry" }
+  },
+  "scopes": {
+    "repo": "Global repository tooling, root configurations, and workspace setup",
+    "ci": "GitHub Actions workflows and automation pipelines",
+    "docs": "Documentation related changes",
+    "tooling": "Shared configurations like tsconfig, eslint, or prettier packages",
+    "apps": "Any work inside apps/ (e.g. 01-typescript, 00-side-projects/qa-forum)",
+    "course:<topic>": "Work inside a course learning workspace, <topic> = the course-map folder slug (e.g. ts-basics, nestjs, real-time)",
+    "playgrounds": "Daily coding challenges and warmup exercises"
+  },
+  "footerTypes": {
+    "BREAKING CHANGE": { "description": "The commit introduces architectural breaking changes" },
+    "Closes": { "description": "Closes a tracking issue or pull request" },
+    "Co-authored-by": { "description": "Credits mentors or cohort peers during pairing sessions" }
+  }
+}
