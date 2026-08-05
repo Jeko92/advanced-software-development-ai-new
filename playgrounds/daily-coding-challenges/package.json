@@ -1,8 +1,9 @@
 {
-  "name": "daily-challenge",
+  "name": "@playgrounds/daily-coding-challenges",
+  "version": "1.0.0",
+  "description": "",
   "module": "src/index.ts",
   "type": "module",
-  "private": true,
   "scripts": {
     "try": "tsx",
     "next": "tsx src/index.ts",

@@ -1,7 +1,7 @@
 {
   "name": "@bootcamp/ts-basics",
   "version": "1.0.0",
-  "private": true,
+  "description": "",
   "type": "module",
   "scripts": {
     "dev": "tsx ./scripts/run.ts",
