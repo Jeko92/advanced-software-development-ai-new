@@ -10,7 +10,7 @@ locate(['a','b',['c','d',['e']]],'a'); // should return true
 locate(['a','b',['c','d',['e']]],'f'); // should return false
 */
 
-import { test } from "@/test.ts";
+import { test } from '@/test.ts';
 
 type NestedArray = (unknown | NestedArray)[];
 
@@ -18,8 +18,8 @@ function locate(array: NestedArray, value: unknown): boolean {
   return array.flat(Infinity).includes(value);
 }
 
-test(locate(["a", "b", ["c", "d", ["e"]]], "e"), true);
-test(locate(["a", "b", ["c", "d", ["e"]]], "a"), true);
-test(locate(["a", "b", ["c", "d", ["e"]]], "f"), false);
+test(locate(['a', 'b', ['c', 'd', ['e']]], 'e'), true);
+test(locate(['a', 'b', ['c', 'd', ['e']]], 'a'), true);
+test(locate(['a', 'b', ['c', 'd', ['e']]], 'f'), false);
 test(locate([1, [2, [3, [4]]]], 4), true);
 test(locate([1, [2, [3, [4]]]], 5), false);

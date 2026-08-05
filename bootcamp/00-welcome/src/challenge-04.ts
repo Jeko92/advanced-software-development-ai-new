@@ -2,7 +2,7 @@ function findMissingLetter(chars: string[]): string {
   const [first] = chars;
 
   if (first === undefined) {
-    throw new Error("Array is empty");
+    throw new Error('Array is empty');
   }
 
   let expected = first.charCodeAt(0);
@@ -14,8 +14,8 @@ function findMissingLetter(chars: string[]): string {
     expected++;
   }
 
-  throw new Error("No missing letter found");
+  throw new Error('No missing letter found');
 }
 
-console.log(findMissingLetter(["a", "b", "c", "d", "f"]));
-console.log(findMissingLetter(["O", "Q", "R", "S"]));
+console.log(findMissingLetter(['a', 'b', 'c', 'd', 'f']));
+console.log(findMissingLetter(['O', 'Q', 'R', 'S']));

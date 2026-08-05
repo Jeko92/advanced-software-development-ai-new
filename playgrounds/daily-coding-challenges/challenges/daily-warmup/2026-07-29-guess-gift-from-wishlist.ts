@@ -41,16 +41,17 @@ interface Present {
   weight: string;
 }
 
-function guessGifts ( wishlist: WishlistItem[], presents: Present[] ): string[] {
-  const matchingItems = wishlist.filter(item =>
-    presents.some(present =>
-      present.size === item.size &&
-      present.clatters === item.clatters &&
-      present.weight === item.weight
-    )
+function guessGifts(wishlist: WishlistItem[], presents: Present[]): string[] {
+  const matchingItems = wishlist.filter((item) =>
+    presents.some(
+      (present) =>
+        present.size === item.size &&
+        present.clatters === item.clatters &&
+        present.weight === item.weight,
+    ),
   );
 
-  const names = matchingItems.map(item => item.name);
+  const names = matchingItems.map((item) => item.name);
   return Array.from(new Set(names));
 }
 
@@ -61,26 +62,23 @@ const wishlist = [
 ];
 
 test(
-  guessGifts(wishlist, [ { size: 'medium', clatters: 'a bit', weight: 'medium' }, {
-    size: 'small',
-    clatters: 'yes',
-    weight: 'light'
-  } ]).sort(),
-  [ 'Mini Puzzle', 'Toy Car' ].sort()
+  guessGifts(wishlist, [
+    { size: 'medium', clatters: 'a bit', weight: 'medium' },
+    {
+      size: 'small',
+      clatters: 'yes',
+      weight: 'light',
+    },
+  ]).sort(),
+  ['Mini Puzzle', 'Toy Car'].sort(),
 );
 test(
-  guessGifts(wishlist, [ { size: 'small', clatters: 'no', weight: 'light' } ]),
-  [ 'Card Game' ]
+  guessGifts(wishlist, [{ size: 'small', clatters: 'no', weight: 'light' }]),
+  ['Card Game'],
 );
 test(
-  guessGifts(wishlist, [ { size: 'large', clatters: 'yes', weight: 'heavy' } ]),
-  []
+  guessGifts(wishlist, [{ size: 'large', clatters: 'yes', weight: 'heavy' }]),
+  [],
 );
-test(
-  guessGifts([], [ { size: 'small', clatters: 'no', weight: 'light' } ]),
-  []
-);
-test(
-  guessGifts(wishlist, []).sort(),
-  [].sort()
-);
+test(guessGifts([], [{ size: 'small', clatters: 'no', weight: 'light' }]), []);
+test(guessGifts(wishlist, []).sort(), [].sort());

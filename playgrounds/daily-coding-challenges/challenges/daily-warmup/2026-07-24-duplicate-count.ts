@@ -10,20 +10,20 @@ Example
 "ABBA" -> 2 # 'A' and 'B' each occur twice
 */
 
-import { test } from "@/test.ts";
+import { test } from '@/test.ts';
 
 function duplicateCount(text: string): number {
   return new Set(
     text
       .toLowerCase()
-      .split("")
+      .split('')
       .sort()
       .filter((c, i, arr) => c === arr[i + 1]),
   ).size;
 }
 
 function duplicateCount2(text: string): number {
-  const sorted = text.toLowerCase().split("").sort();
+  const sorted = text.toLowerCase().split('').sort();
   const duplicates = new Set<string>();
 
   for (let i = 0; i < sorted.length - 1; i++) {
@@ -35,14 +35,14 @@ function duplicateCount2(text: string): number {
   return duplicates.size;
 }
 
-test(duplicateCount("abcde"), 0);
-test(duplicateCount("aabbcde"), 2);
-test(duplicateCount("aabBcde"), 2);
-test(duplicateCount("indivisibility"), 1);
-test(duplicateCount("ABBA"), 2);
-console.log("==========================");
-test(duplicateCount2("abcde"), 0);
-test(duplicateCount2("aabbcde"), 2);
-test(duplicateCount2("aabBcde"), 2);
-test(duplicateCount2("indivisibility"), 1);
-test(duplicateCount2("ABBA"), 2);
+test(duplicateCount('abcde'), 0);
+test(duplicateCount('aabbcde'), 2);
+test(duplicateCount('aabBcde'), 2);
+test(duplicateCount('indivisibility'), 1);
+test(duplicateCount('ABBA'), 2);
+console.log('==========================');
+test(duplicateCount2('abcde'), 0);
+test(duplicateCount2('aabbcde'), 2);
+test(duplicateCount2('aabBcde'), 2);
+test(duplicateCount2('indivisibility'), 1);
+test(duplicateCount2('ABBA'), 2);

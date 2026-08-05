@@ -4,10 +4,10 @@
 
 import { test } from '@/test.ts';
 
-function solution ( n: number ): number {
-  return Array.from({ length: n }, ( _, index ) => index)
-    .map(num => num % 3 === 0 || num % 5 === 0 ? num : 0)
-    .reduce(( curr, prev ) => curr + prev, 0);
+function solution(n: number): number {
+  return Array.from({ length: n }, (_, index) => index)
+    .map((num) => (num % 3 === 0 || num % 5 === 0 ? num : 0))
+    .reduce((curr, prev) => curr + prev, 0);
 }
 
 test(solution(10), 23);

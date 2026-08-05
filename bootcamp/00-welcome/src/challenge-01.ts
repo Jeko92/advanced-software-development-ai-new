@@ -1,4 +1,4 @@
-type UserStatus = "online" | "offline";
+type UserStatus = 'online' | 'offline';
 
 interface User {
   username: string;
@@ -6,18 +6,18 @@ interface User {
   lastActivity: number;
 }
 
-type PresenceCategory = "online" | "offline" | "away";
+type PresenceCategory = 'online' | 'offline' | 'away';
 
 type PresenceResult = Partial<Record<PresenceCategory, string[]>>;
 
 const AWAY_THRESHOLD_MINUTES = 10;
 
 function categorize(user: User): PresenceCategory {
-  if (user.status === "offline") {
-    return "offline";
+  if (user.status === 'offline') {
+    return 'offline';
   }
 
-  return user.lastActivity > AWAY_THRESHOLD_MINUTES ? "away" : "online";
+  return user.lastActivity > AWAY_THRESHOLD_MINUTES ? 'away' : 'online';
 }
 
 function whosOnline(users: readonly User[]): PresenceResult {
@@ -32,18 +32,18 @@ function whosOnline(users: readonly User[]): PresenceResult {
 
 const users: User[] = [
   {
-    username: "David",
-    status: "online",
+    username: 'David',
+    status: 'online',
     lastActivity: 10,
   },
   {
-    username: "Lucy",
-    status: "offline",
+    username: 'Lucy',
+    status: 'offline',
     lastActivity: 22,
   },
   {
-    username: "Bob",
-    status: "online",
+    username: 'Bob',
+    status: 'online',
     lastActivity: 104,
   },
 ];

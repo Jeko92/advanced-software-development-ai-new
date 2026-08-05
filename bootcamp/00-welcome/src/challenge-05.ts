@@ -6,7 +6,7 @@ function whoLikesIt(names: Names[]): string {
   const [first, second, third] = names;
 
   if (first === undefined) {
-    return "no one likes this";
+    return 'no one likes this';
   }
 
   if (second === undefined) {
@@ -26,17 +26,17 @@ function whoLikesIt(names: Names[]): string {
 
 console.log(whoLikesIt([]));
 
-console.log(whoLikesIt([{ name: "Peter" }]));
+console.log(whoLikesIt([{ name: 'Peter' }]));
 
-console.log(whoLikesIt([{ name: "Jacob" }, { name: "Alex" }]));
+console.log(whoLikesIt([{ name: 'Jacob' }, { name: 'Alex' }]));
 
-console.log(whoLikesIt([{ name: "Max" }, { name: "John" }, { name: "Mark" }]));
+console.log(whoLikesIt([{ name: 'Max' }, { name: 'John' }, { name: 'Mark' }]));
 
 console.log(
   whoLikesIt([
-    { name: "Alex" },
-    { name: "Jacob" },
-    { name: "Mark" },
-    { name: "Max" },
+    { name: 'Alex' },
+    { name: 'Jacob' },
+    { name: 'Mark' },
+    { name: 'Max' },
   ]),
 );

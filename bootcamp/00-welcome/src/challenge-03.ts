@@ -1,12 +1,12 @@
 function yourOrderPlease(s: string): string {
-  return s === ""
-    ? ""
+  return s === ''
+    ? ''
     : s
-        .split(" ")
+        .split(' ')
         .sort((a, b) => Number(/\d/.exec(a)) - Number(/\d/.exec(b)))
-        .join(" ");
+        .join(' ');
 }
 
-console.log(yourOrderPlease("is2 Thi1s T4est 3a"));
-console.log(yourOrderPlease("4of Fo1r pe6ople g3ood th5e the2"));
-console.log(yourOrderPlease(""));
+console.log(yourOrderPlease('is2 Thi1s T4est 3a'));
+console.log(yourOrderPlease('4of Fo1r pe6ople g3ood th5e the2'));
+console.log(yourOrderPlease(''));

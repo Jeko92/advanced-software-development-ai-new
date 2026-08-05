@@ -6,10 +6,10 @@ only letters and spaces. Spaces will be included only when more than one word is
 
 import { test } from '@/test.ts';
 
-function spinWords ( s: string ): string {
+function spinWords(s: string): string {
   return s
     .split(' ')
-    .map(w => w.length < 5 ? w : w.split('').reverse().join(''))
+    .map((w) => (w.length < 5 ? w : w.split('').reverse().join('')))
     .join(' ');
 }
 

@@ -5,9 +5,9 @@ as key and count as 'value'.
 
 import { test } from '@/test.ts';
 
-function letterCount ( s: string ): Record<string, number> {
+function letterCount(s: string): Record<string, number> {
   const resultHash: Record<string, number> = {};
-  for ( const letter of s ) {
+  for (const letter of s) {
     resultHash[letter] = (resultHash[letter] ?? 0) + 1;
   }
 

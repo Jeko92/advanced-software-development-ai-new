@@ -3,10 +3,10 @@
 
 import { test } from '@/test.ts';
 
-function count ( s: string ): Record<string, number> {
+function count(s: string): Record<string, number> {
   const frequency: Record<string, number> = {};
 
-  for ( const char of s ) {
+  for (const char of s) {
     frequency[char] = (frequency[char] ?? 0) + 1;
   }
 

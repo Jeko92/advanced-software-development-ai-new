@@ -1,6 +1,6 @@
 import { test } from '@/test.ts';
 
-function elevator ( left: number, right: number, call: number ): string {
+function elevator(left: number, right: number, call: number): string {
   return Math.abs(left - call) < Math.abs(right - call) ? 'left' : 'right';
 }
 

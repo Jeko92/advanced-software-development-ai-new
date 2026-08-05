@@ -8,16 +8,16 @@ Note: keep the original order of the names in the output.
 
 import { test } from '@/test.ts';
 
-function friend ( friends: string[] ): string[] {
-  return friends.filter(name => name.length === 4);
+function friend(friends: string[]): string[] {
+  return friends.filter((name) => name.length === 4);
 }
 
-test(friend([ 'Ryan', 'Kieran', 'Jason', 'Yous' ]), [ 'Ryan', 'Yous' ]);
-test(friend([ 'Jimm', 'Cari', 'aret', 'truehdnviegkwgvke', 'sixtyOneDriver' ]), [
+test(friend(['Ryan', 'Kieran', 'Jason', 'Yous']), ['Ryan', 'Yous']);
+test(friend(['Jimm', 'Cari', 'aret', 'truehdnviegkwgvke', 'sixtyOneDriver']), [
   'Jimm',
   'Cari',
   'aret',
 ]);
 test(friend([]), []);
-test(friend([ 'Mark', 'Jim' ]), [ 'Mark' ]);
-test(friend([ 'Anna', 'Kate', 'Lena' ]), [ 'Anna', 'Kate', 'Lena' ]);
+test(friend(['Mark', 'Jim']), ['Mark']);
+test(friend(['Anna', 'Kate', 'Lena']), ['Anna', 'Kate', 'Lena']);

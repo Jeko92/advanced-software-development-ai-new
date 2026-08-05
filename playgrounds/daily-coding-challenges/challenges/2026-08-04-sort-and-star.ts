@@ -7,12 +7,12 @@ You should not remove or add elements from/to the array.
 
 import { test } from '@/test.ts';
 
-function twoSort ( ar: string[] ): string {
+function twoSort(ar: string[]): string {
   return ar.sort()[0]!.split('').join('***');
 }
 
-test(twoSort([ 'banana', 'apple', 'cherry' ]), 'a***p***p***l***e');
-test(twoSort([ 'hello', 'world' ]), 'h***e***l***l***o');
-test(twoSort([ 'a' ]), 'a');
-test(twoSort([ 'cat', 'bat', 'ant' ]), 'a***n***t');
-test(twoSort([ 'zoo', 'abc' ]), 'a***b***c');
+test(twoSort(['banana', 'apple', 'cherry']), 'a***p***p***l***e');
+test(twoSort(['hello', 'world']), 'h***e***l***l***o');
+test(twoSort(['a']), 'a');
+test(twoSort(['cat', 'bat', 'ant']), 'a***n***t');
+test(twoSort(['zoo', 'abc']), 'a***b***c');

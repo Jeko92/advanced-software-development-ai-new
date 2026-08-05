@@ -1,13 +1,8 @@
 {
   "extends": "@bootcamp/tsconfig/base.json",
   "compilerOptions": {
-    "lib": [
-      "ESNext",
-      "DOM"
-    ],
-    "types": [
-      "node"
-    ],
+    "lib": ["ESNext", "DOM"],
+    "types": ["node"],
     "module": "Preserve",
     "moduleDetection": "force",
     "jsx": "react-jsx",
@@ -23,17 +18,9 @@
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false,
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"]
     }
   },
-  "include": [
-    "src/**/*",
-    "challenges/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    ".db",
-  ]
+  "include": ["src/**/*", "challenges/**/*"],
+  "exclude": ["node_modules", ".db"]
 }
