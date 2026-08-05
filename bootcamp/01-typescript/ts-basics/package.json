@@ -7,7 +7,7 @@
     "dev": "tsx ./scripts/run.ts",
     "lint": "eslint ..",
     "lint:fix": "eslint .. --fix",
-    "typecheck": "../node_modules/.bin/tsc --noEmit",
+    "typecheck": "tsc --noEmit",
     "format:check": "prettier --check ..",
     "format:write": "prettier --write .."
   },
