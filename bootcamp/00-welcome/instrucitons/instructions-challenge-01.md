@@ -9,18 +9,18 @@ The input data has the following structure:
 ```js
 [
   {
-    username: "David",
-    status: "online",
+    username: 'David',
+    status: 'online',
     lastActivity: 10,
   },
   {
-    username: "Lucy",
-    status: "offline",
+    username: 'Lucy',
+    status: 'offline',
     lastActivity: 22,
   },
   {
-    username: "Bob",
-    status: "online",
+    username: 'Bob',
+    status: 'online',
     lastActivity: 104,
   },
 ];

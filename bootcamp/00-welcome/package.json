@@ -6,9 +6,15 @@
   "scripts": {
     "dev": "tsx src/index.ts",
     "build": "tsc",
-    "typecheck": "tsc --noEmit"
+    "lint": "eslint ..",
+    "lint:fix": "eslint .. --fix",
+    "typecheck": "tsc --noEmit",
+    "format:check": "prettier --check ..",
+    "format:write": "prettier --write .."
   },
   "devDependencies": {
+    "@bootcamp/eslint-config": "workspace:*",
+    "@bootcamp/prettier-config": "workspace:*",
     "@bootcamp/tsconfig": "workspace:*",
     "tsx": "^4.19.0",
     "typescript": "^5.7.0"

@@ -9,8 +9,5 @@
     "strict": true,
     "noEmit": true
   },
-  "include": [
-    "src",
-    "book-search/vite.config.ts"
-  ]
+  "include": ["src", "vite.config.ts"]
 }

@@ -4,17 +4,17 @@ This package contains client-side TypeScript exercises using Vite.
 
 The project demonstrates:
 
-* TypeScript in the browser
-* DOM manipulation
-* Event handling
-* Fetching external APIs
-* Environment variables with Vite
+- TypeScript in the browser
+- DOM manipulation
+- Event handling
+- Fetching external APIs
+- Environment variables with Vite
 
 ## Tech Stack
 
-* TypeScript
-* Vite
-* TMDB API
+- TypeScript
+- Vite
+- TMDB API
 
 ## Setup
 

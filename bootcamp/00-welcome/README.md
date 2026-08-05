@@ -5,12 +5,13 @@ This project contains my solutions for the **neuefische Advanced Software Develo
 The goal of this module is to practice TypeScript fundamentals, problem solving, and running individual challenge solutions inside a monorepo workspace.
 
 ## Implemented Challenges
-  * Who's Online?
-  * Credit Card Mask
-  * Your Order, Please
-  * Find the Missing Letter
-  * Who Likes It?
-  * Conway’s Game of Life
+
+- Who's Online?
+- Credit Card Mask
+- Your Order, Please
+- Find the Missing Letter
+- Who Likes It?
+- Conway’s Game of Life
 
 ## Running Solutions
 
