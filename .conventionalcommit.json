@@ -36,7 +36,7 @@
     "docs": "Documentation related changes",
     "tooling": "Shared configurations like tsconfig, eslint, or prettier packages",
     "apps": "Any work inside apps/ (e.g. 01-typescript, 00-side-projects/qa-forum)",
-    "course:<topic>": "Work inside a course learning workspace, <topic> = the course-map folder slug (e.g. ts-basics, nestjs, real-time)",
+    "bootcamp:<topic>": "Work inside a course learning workspace, <topic> = the course-map folder slug (e.g. ts-basics, nestjs, real-time)",
     "playgrounds": "Daily coding challenges and warmup exercises"
   },
   "footerTypes": {
