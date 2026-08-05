@@ -7,7 +7,7 @@ export default [
       "**/node_modules/**",
       "**/.next/**",
       "**/.turbo/**",
-      "**/playgrounds/daily-coding-challenges/**",
+      "**/playgrounds/daily-coding-challenges/.db",
     ],
   },
   ...baseConfig,

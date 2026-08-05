@@ -1,0 +1,20 @@
+{
+  "name": "daily-challenge",
+  "module": "src/index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "try": "tsx",
+    "next": "tsx src/index.ts",
+    "solution": "tsx src/solution.ts",
+    "reset": "tsx src/reset.ts"
+  },
+  "devDependencies": {
+    "@bootcamp/tsconfig": "workspace:*",
+    "@types/node": "^25.9.5",
+    "tsx": "^4.23.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
