@@ -45,7 +45,7 @@ https://developer.themoviedb.org/
 From this package directory:
 
 ```bash
-cd bootcamp/01-typescript/ts-client
+cd bootcamp/01-typescript/ts-client/book-search
 ```
 
 Start the Vite development server:

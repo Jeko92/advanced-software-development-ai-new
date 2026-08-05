@@ -1,5 +1,5 @@
 {
-  "name": "@bootcamp/ts-client",
+  "name": "@bootcamp/ts-client-book-search",
   "version": "1.0.0",
   "private": true,
   "type": "module",

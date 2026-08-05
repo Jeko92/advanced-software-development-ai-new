@@ -3,6 +3,7 @@ packages:
   - 'apps/00-side-projects/*'
   - 'bootcamp/*'
   - 'bootcamp/*/*'
+  - 'bootcamp/*/*/*'
   - 'packages/*'
   - 'playgrounds/*'
 allowBuilds:
