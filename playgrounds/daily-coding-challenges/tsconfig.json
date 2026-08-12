@@ -3,6 +3,7 @@
   "compilerOptions": {
     "lib": ["ESNext", "DOM"],
     "types": ["node"],
+    "rewriteRelativeImportExtensions": false,
     "rootDir": ".",
     "outDir": "./dist",
     "paths": {
