@@ -5,9 +5,10 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "noEmit": true,
+    "rootDir": "./src",
+    "outDir": "./dist",
     "noUnusedLocals": false,
     "noUnusedParameters": false
   },
-  "include": ["src/**/*", "challenges/**/*", "**/*.ts"]
+  "include": ["src/**/*"]
 }

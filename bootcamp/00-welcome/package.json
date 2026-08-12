@@ -6,11 +6,11 @@
   "scripts": {
     "dev": "tsx src/index.ts",
     "build": "tsc",
-    "lint": "eslint ..",
-    "lint:fix": "eslint .. --fix",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "typecheck": "tsc --noEmit",
-    "format:check": "prettier --check ..",
-    "format:write": "prettier --write .."
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write ."
   },
   "devDependencies": {
     "@bootcamp/eslint-config": "workspace:*",
