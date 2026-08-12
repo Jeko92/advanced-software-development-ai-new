@@ -522,3 +522,47 @@ console.log('Book create payload (Omit<Book, ...>):', bookCreatePayloadComposed)
 console.log('Book update payload (Partial<Omit<Book, ...>>):', bookUpdatePayload);
 console.log('Book preview (Pick<Book, ...>):', bookPreviewComposed);
 console.log('App state (uses Book[] directly):', appStateComposed);
+
+/*******************************************************/
+/* TypeScript Advanced - Declaration Files */
+/*******************************************************/
+
+// Declaring types for your own project
+//
+// A .d.ts file can only contain type declarations - no console.log, no
+// function bodies, nothing runnable - so this section can't be demonstrated
+// inline the way earlier sections were without turning this script into a
+// module other files depend on. Instead, see:
+//
+//   - src/types/book.d.ts  the shared Book/BookCreatePayload/ApiResponse
+//                          declarations, `export`-ed exactly like a
+//                          regular .ts file would export them.
+//   - src/bookService.ts   imports those types with `import type`, so none
+//                          of the declaration file exists in compiled JS.
+//
+// index.ts deliberately keeps its own local Book/ApiResponse types from
+// earlier sections rather than importing from types/book.d.ts, so this
+// walkthrough stays a single, self-contained script top to bottom.
+console.log('******* Declaration files *******');
+console.log('See src/types/book.d.ts and src/bookService.ts for the full example.');
+
+
+/*******************************************************/
+/* TypeScript Advanced - Types Packages  */
+/*******************************************************/
+import * as _ from 'lodash';
+
+console.log('******* @types/lodash *******');
+const grouped = _.groupBy(['cat', 'dog', 'crow'], 'length');
+console.log('Grouped by string length:', grouped);
+
+import fs from 'node:fs';
+import path from 'node:path';
+
+console.log('******* @types/node *******');
+const appEnv: string | undefined = process.env['APP_ENV'];
+console.log('APP_ENV:', appEnv ?? '(not set)');
+
+const filePath = path.join(import.meta.dirname, 'data', 'volunteers.json');
+const volunteersRaw = fs.readFileSync(filePath, 'utf8');
+console.log('Volunteers loaded from disk:', JSON.parse(volunteersRaw));
