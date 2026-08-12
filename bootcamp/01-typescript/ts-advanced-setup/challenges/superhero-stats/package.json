@@ -1,0 +1,28 @@
+{
+  "name": "@bootcamp/superhero-stats",
+  "private": true,
+  "version": "1.0.0",
+  "description": "TypeScript Advanced Setup challenge: nodemon + tsx reload on TypeScript and JSON changes",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "nodemon",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write ."
+  },
+  "devDependencies": {
+    "@bootcamp/eslint-config": "workspace:*",
+    "@bootcamp/prettier-config": "workspace:*",
+    "@bootcamp/tsconfig": "workspace:*",
+    "@types/node": "^22.0.0",
+    "nodemon": "^3.1.14",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  },
+  "prettier": "@bootcamp/prettier-config"
+}
