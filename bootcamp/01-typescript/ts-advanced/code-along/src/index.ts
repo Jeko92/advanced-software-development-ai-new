@@ -321,3 +321,204 @@ const raw: ApiResponseWithDefault = { status: 200, message: "OK", data: null };
 const typed: ApiResponseWithDefault<Book> = { status: 200, message: "OK", data: book };
 console.log('Raw: ', raw);
 console.log('Typed: ', typed);
+
+/*******************************************************/
+/* TypeScript Advanced - Utility Types */
+/*******************************************************/
+
+// Partial and Required
+type BookUpdate = Partial<Book>;
+
+const utilityBooks: Book[] = [
+  {
+    id: '1',
+    title: 'Clean Code',
+    author: 'Robert C. Martin',
+    isbn: '978-0132350884',
+    isAvailable: true,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    id: '2',
+    title: 'Refactoring',
+    author: 'Martin Fowler',
+    isbn: '978-0201485677',
+    isAvailable: true,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+];
+
+const updateBook = (id: string, changes: BookUpdate): Book => {
+  const bookIndex = utilityBooks.findIndex((existing) => existing.id === id);
+  const existingBook = utilityBooks[bookIndex];
+
+  if (!existingBook) {
+    throw new Error('No book found to update.');
+  }
+
+  const updatedBook = { ...existingBook, ...changes };
+  utilityBooks[bookIndex] = updatedBook;
+
+  return updatedBook;
+};
+
+console.log('******* Partial<T> *******');
+const updatedBook1 = updateBook('1', { title: 'Clean Code, 2nd Edition' });
+const updatedBook2 = updateBook('1', { isAvailable: false, title: 'Refactoring' });
+console.log('Updated book 1:', updatedBook1);
+console.log('Updated book 2:', updatedBook2);
+
+// Required
+interface AppConfig {
+  port?: number;
+  debug?: boolean;
+  dbUrl?: string;
+}
+
+type ResolvedConfig = Required<AppConfig>;
+
+console.log('******* Required<T> *******');
+const resolvedConfig: ResolvedConfig = {
+  port: 3000,
+  debug: false,
+  dbUrl: 'postgres://localhost:5432/bookshelf',
+};
+console.log('Resolved config:', resolvedConfig);
+
+// const incompleteConfig: ResolvedConfig = { port: 3000, debug: false };
+// Property dbUrl is missing in type { port: number; debug: false; }
+// but required in type Required<AppConfig>
+
+type FrozenBook = Readonly<Book>;
+
+const frozenBook: FrozenBook = Object.freeze({
+  id: '1',
+  title: 'Clean Code',
+  author: 'Robert C. Martin',
+  isbn: '978-0132350884',
+  isAvailable: true,
+  createdAt: new Date(),
+  updatedAt: new Date(),
+});
+
+console.log('******* Readonly<T> *******');
+console.log('Frozen book:', frozenBook);
+
+try {
+  (frozenBook as Book).title = 'New Title';
+} catch (err) {
+  console.error('Cannot mutate a frozen book:', (err as Error).message);
+}
+
+// Pick and Omit
+
+type BookPreview = Pick<Book, "id" | "title" | "author">;
+type BookCreatePayload = Omit<Book, "id" | "createdAt" | "updatedAt">;
+
+const bookPreview: BookPreview = {
+  id: '3',
+  title: 'The Pragmatic Programmer',
+  author: 'David Thomas',
+};
+
+console.log('******* Pick<T, K> *******');
+console.log('Book preview:', bookPreview);
+
+export const newBookPayload: BookCreatePayload = {
+  title: 'Domain-Driven Design',
+  author: 'Eric Evans',
+  isbn: '978-0321125217',
+  isAvailable: true,
+};
+
+console.log('******* Omit<T, K> *******');
+console.log('New book payload:', newBookPayload);
+
+// type Typo = Pick<Book, "Id">;
+// ^ compile error: Type '"Id"' does not satisfy the constraint
+// 'keyof Book' - the key must actually exist on Book (case-sensitive).
+
+// Record
+
+type BookLookup = Record<string, Book>;
+
+const catalog: BookLookup = {
+  "978-0132350884": {
+    id: '1',
+    title: "Clean Code",
+    author: "Robert C. Martin",
+    isbn: "978-0132350884",
+    isAvailable: true,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+};
+
+console.log('******* Record<K, T> *******');
+console.log('Catalog:', catalog);
+
+type Shelf = "fiction" | "non-fiction" | "technical";
+type ShelfCounts = Record<Shelf, number>;
+
+const counts: ShelfCounts = {
+  fiction: 120,
+  "non-fiction": 85,
+  technical: 200,
+};
+
+console.log('******* Record<K, T> with a union key *******');
+console.log('Shelf counts:', counts);
+
+// const incompleteCounts: ShelfCounts = { fiction: 120, "non-fiction": 85 };
+// ^ compile error: Property 'technical' is missing in type
+// '{ fiction: number; "non-fiction": number; }' but required in type
+// 'ShelfCounts' - Record<K, T> guarantees every key in the union is present.
+
+// Composing utility types
+
+// POST /books: excludes server-generated fields
+type BookCreatePayloadComposed = Omit<Book, "id" | "createdAt" | "updatedAt">;
+
+const bookCreatePayloadComposed: BookCreatePayloadComposed = {
+  title: 'Domain-Driven Design',
+  author: 'Eric Evans',
+  isbn: '978-0321125217',
+  isAvailable: true,
+};
+
+// PATCH /books/:id: excludes server fields, everything else optional
+type BookUpdatePayload = Partial<Omit<Book, "id" | "createdAt" | "updatedAt">>;
+
+const bookUpdatePayload: BookUpdatePayload = {
+  title: 'Clean Code, 2nd Edition',
+};
+
+// GET /books (list view): only the fields needed for display
+type BookPreviewComposed = Pick<Book, "id" | "title" | "author">;
+
+const bookPreviewComposed: BookPreviewComposed = {
+  id: '3',
+  title: 'The Pragmatic Programmer',
+  author: 'David Thomas',
+};
+
+// Application state
+interface AppStateComposed {
+  books: Book[];
+  isLoading: boolean;
+  filterByAuthor: string | null;
+}
+
+const appStateComposed: AppStateComposed = {
+  books: [book],
+  isLoading: false,
+  filterByAuthor: null,
+};
+
+console.log('******* Composing utility types *******');
+console.log('Book create payload (Omit<Book, ...>):', bookCreatePayloadComposed);
+console.log('Book update payload (Partial<Omit<Book, ...>>):', bookUpdatePayload);
+console.log('Book preview (Pick<Book, ...>):', bookPreviewComposed);
+console.log('App state (uses Book[] directly):', appStateComposed);
