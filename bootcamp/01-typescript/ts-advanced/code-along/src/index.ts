@@ -238,7 +238,7 @@ console.log('Array<T> books:', books);
 console.log('T[] alsoBooks:', alsoBooks);
 
 const fetchBooks = (): Promise<ApiBook[]> => {
-  return new Promise(( resolve ) => {
+  return new Promise((resolve) => {
     setTimeout(() => {
       resolve([
         { id: 1, title: 'Clean Code', author: 'Robert C. Martin' },
@@ -266,27 +266,30 @@ console.log('Featured (readonly):', featured);
 console.log('Another book will not be added', anotherBook);
 
 // Generic functions
-const getFirst = ( items: unknown[] ): unknown => {
+const getFirst = (items: unknown[]): unknown => {
   return items[0];
 };
 
 console.log('******* Generic function call without type information *******');
-const title = getFirst([ 'Clean Code', 'Refactoring' ]);
+const title = getFirst(['Clean Code', 'Refactoring']);
 console.log('Title is: ', title);
 
-const getFirstGeneric = <T>( items: T[] ): T | undefined => {
+const getFirstGeneric = <T>(items: T[]): T | undefined => {
   return items[0];
 };
 
 console.log('*******  Generic function call with type information *******');
-const titleGeneric = getFirstGeneric([ 'Clean Code', 'Refactoring' ]);
-const idGeneric = getFirstGeneric([ 1, 2, 3 ]);
-console.log(`titleGeneric is: ${titleGeneric}, type of titleGeneric is: ${typeof titleGeneric}`);
-console.log(`idGeneric is: ${idGeneric}, type of idGeneric is: ${typeof idGeneric}`);
-
+const titleGeneric = getFirstGeneric(['Clean Code', 'Refactoring']);
+const idGeneric = getFirstGeneric([1, 2, 3]);
+console.log(
+  `titleGeneric is: ${titleGeneric}, type of titleGeneric is: ${typeof titleGeneric}`,
+);
+console.log(
+  `idGeneric is: ${idGeneric}, type of idGeneric is: ${typeof idGeneric}`,
+);
 
 // Generic constraints
-const getEntityId = <T extends { id: number | string }> (
+const getEntityId = <T extends { id: number | string }>(
   entity: T,
 ): number | string => {
   return entity.id;
@@ -295,18 +298,22 @@ const getEntityId = <T extends { id: number | string }> (
 console.log('*******  Generic constraints(number | string) *******');
 const idString = getEntityId({ id: 'author-123', title: 'Clean Code' });
 const idNumber = getEntityId({ id: 1, name: 'no id here' });
-console.log(`idString is: ${idString}, type of idString is: ${typeof idString}`);
-console.log(`idNumber is: ${idNumber}, type of idNumber is: ${typeof idNumber}`);
+console.log(
+  `idString is: ${idString}, type of idString is: ${typeof idString}`,
+);
+console.log(
+  `idNumber is: ${idNumber}, type of idNumber is: ${typeof idNumber}`,
+);
 
 // getEntityId({ name: "no id here" }); // compile error: property 'id' is missing
 
 // Multiple type parameters
-const createEntry = <K extends string, V>(key: K, value: V): [K, V] =>{
+const createEntry = <K extends string, V>(key: K, value: V): [K, V] => {
   return [key, value];
-}
+};
 
 console.log('*******  Multiple type parameters *******');
-const entry = createEntry("isbn", "978-0132350884");
+const entry = createEntry('isbn', '978-0132350884');
 console.log('Entry: ', entry);
 
 // Default type parameters
@@ -317,8 +324,12 @@ interface ApiResponseWithDefault<T = unknown> {
 }
 
 console.log('*******  Default type parameters *******');
-const raw: ApiResponseWithDefault = { status: 200, message: "OK", data: null };
-const typed: ApiResponseWithDefault<Book> = { status: 200, message: "OK", data: book };
+const raw: ApiResponseWithDefault = { status: 200, message: 'OK', data: null };
+const typed: ApiResponseWithDefault<Book> = {
+  status: 200,
+  message: 'OK',
+  data: book,
+};
 console.log('Raw: ', raw);
 console.log('Typed: ', typed);
 
@@ -366,7 +377,10 @@ const updateBook = (id: string, changes: BookUpdate): Book => {
 
 console.log('******* Partial<T> *******');
 const updatedBook1 = updateBook('1', { title: 'Clean Code, 2nd Edition' });
-const updatedBook2 = updateBook('1', { isAvailable: false, title: 'Refactoring' });
+const updatedBook2 = updateBook('1', {
+  isAvailable: false,
+  title: 'Refactoring',
+});
 console.log('Updated book 1:', updatedBook1);
 console.log('Updated book 2:', updatedBook2);
 
@@ -414,8 +428,8 @@ try {
 
 // Pick and Omit
 
-type BookPreview = Pick<Book, "id" | "title" | "author">;
-type BookCreatePayload = Omit<Book, "id" | "createdAt" | "updatedAt">;
+type BookPreview = Pick<Book, 'id' | 'title' | 'author'>;
+type BookCreatePayload = Omit<Book, 'id' | 'createdAt' | 'updatedAt'>;
 
 const bookPreview: BookPreview = {
   id: '3',
@@ -445,11 +459,11 @@ console.log('New book payload:', newBookPayload);
 type BookLookup = Record<string, Book>;
 
 const catalog: BookLookup = {
-  "978-0132350884": {
+  '978-0132350884': {
     id: '1',
-    title: "Clean Code",
-    author: "Robert C. Martin",
-    isbn: "978-0132350884",
+    title: 'Clean Code',
+    author: 'Robert C. Martin',
+    isbn: '978-0132350884',
     isAvailable: true,
     createdAt: new Date(),
     updatedAt: new Date(),
@@ -459,12 +473,12 @@ const catalog: BookLookup = {
 console.log('******* Record<K, T> *******');
 console.log('Catalog:', catalog);
 
-type Shelf = "fiction" | "non-fiction" | "technical";
+type Shelf = 'fiction' | 'non-fiction' | 'technical';
 type ShelfCounts = Record<Shelf, number>;
 
 const counts: ShelfCounts = {
   fiction: 120,
-  "non-fiction": 85,
+  'non-fiction': 85,
   technical: 200,
 };
 
@@ -479,7 +493,7 @@ console.log('Shelf counts:', counts);
 // Composing utility types
 
 // POST /books: excludes server-generated fields
-type BookCreatePayloadComposed = Omit<Book, "id" | "createdAt" | "updatedAt">;
+type BookCreatePayloadComposed = Omit<Book, 'id' | 'createdAt' | 'updatedAt'>;
 
 const bookCreatePayloadComposed: BookCreatePayloadComposed = {
   title: 'Domain-Driven Design',
@@ -489,14 +503,14 @@ const bookCreatePayloadComposed: BookCreatePayloadComposed = {
 };
 
 // PATCH /books/:id: excludes server fields, everything else optional
-type BookUpdatePayload = Partial<Omit<Book, "id" | "createdAt" | "updatedAt">>;
+type BookUpdatePayload = Partial<Omit<Book, 'id' | 'createdAt' | 'updatedAt'>>;
 
 const bookUpdatePayload: BookUpdatePayload = {
   title: 'Clean Code, 2nd Edition',
 };
 
 // GET /books (list view): only the fields needed for display
-type BookPreviewComposed = Pick<Book, "id" | "title" | "author">;
+type BookPreviewComposed = Pick<Book, 'id' | 'title' | 'author'>;
 
 const bookPreviewComposed: BookPreviewComposed = {
   id: '3',
@@ -518,8 +532,14 @@ const appStateComposed: AppStateComposed = {
 };
 
 console.log('******* Composing utility types *******');
-console.log('Book create payload (Omit<Book, ...>):', bookCreatePayloadComposed);
-console.log('Book update payload (Partial<Omit<Book, ...>>):', bookUpdatePayload);
+console.log(
+  'Book create payload (Omit<Book, ...>):',
+  bookCreatePayloadComposed,
+);
+console.log(
+  'Book update payload (Partial<Omit<Book, ...>>):',
+  bookUpdatePayload,
+);
 console.log('Book preview (Pick<Book, ...>):', bookPreviewComposed);
 console.log('App state (uses Book[] directly):', appStateComposed);
 
@@ -544,8 +564,9 @@ console.log('App state (uses Book[] directly):', appStateComposed);
 // earlier sections rather than importing from types/book.d.ts, so this
 // walkthrough stays a single, self-contained script top to bottom.
 console.log('******* Declaration files *******');
-console.log('See src/types/book.d.ts and src/bookService.ts for the full example.');
-
+console.log(
+  'See src/types/book.d.ts and src/bookService.ts for the full example.',
+);
 
 /*******************************************************/
 /* TypeScript Advanced - Types Packages  */
