@@ -18,7 +18,7 @@
     "@bootcamp/eslint-config": "workspace:*",
     "@bootcamp/prettier-config": "workspace:*",
     "@types/bun": "latest",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.3"
   },
   "prettier": "@bootcamp/prettier-config"
 }
