@@ -1,7 +1,6 @@
 {
   "extends": "@bootcamp/tsconfig/node.json",
   "compilerOptions": {
-    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     },
