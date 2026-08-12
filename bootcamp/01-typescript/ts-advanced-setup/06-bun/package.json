@@ -1,0 +1,24 @@
+{
+  "name": "@bootcamp/bun-demo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Minimal demo for TypeScript Advanced Setup: Bun",
+  "scripts": {
+    "dev": "bun --watch index.html",
+    "dev:console": "bun --watch src/index.ts",
+    "build": "bun build ./index.html --outdir dist",
+    "start": "bun src/serve.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write ."
+  },
+  "devDependencies": {
+    "@bootcamp/eslint-config": "workspace:*",
+    "@bootcamp/prettier-config": "workspace:*",
+    "@types/bun": "latest",
+    "typescript": "^5.9.3"
+  },
+  "prettier": "@bootcamp/prettier-config"
+}
