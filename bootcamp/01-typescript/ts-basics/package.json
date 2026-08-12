@@ -5,11 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "tsx ./scripts/run.ts",
-    "lint": "eslint ..",
-    "lint:fix": "eslint .. --fix",
+    "build": "tsc --build tsconfig.build.json",
+    "clean": "tsc --build tsconfig.build.json --clean",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "typecheck": "tsc --noEmit",
-    "format:check": "prettier --check ..",
-    "format:write": "prettier --write .."
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write ."
   },
   "devDependencies": {
     "@bootcamp/eslint-config": "workspace:*",
