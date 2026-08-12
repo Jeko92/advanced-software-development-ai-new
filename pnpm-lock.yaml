@@ -289,6 +289,24 @@ importers:
         specifier: ^6.0.3
         version: 6.0.3
 
+  bootcamp/01-typescript/ts-advanced/demo:
+    devDependencies:
+      '@bootcamp/eslint-config':
+        specifier: workspace:*
+        version: link:../../../../packages/eslint-config
+      '@bootcamp/prettier-config':
+        specifier: workspace:*
+        version: link:../../../../packages/prettier-config
+      '@bootcamp/tsconfig':
+        specifier: workspace:*
+        version: link:../../../../packages/tsconfig
+      tsx:
+        specifier: ^4.23.1
+        version: 4.23.5
+      typescript:
+        specifier: ^6.0.3
+        version: 6.0.3
+
   bootcamp/01-typescript/ts-basics:
     devDependencies:
       '@bootcamp/eslint-config':
