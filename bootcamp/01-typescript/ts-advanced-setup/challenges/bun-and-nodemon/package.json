@@ -1,0 +1,24 @@
+{
+  "name": "@bootcamp/bun-and-nodemon",
+  "private": true,
+  "version": "1.0.0",
+  "description": "TypeScript Advanced Setup challenge: nodemon watching a file outside Bun's import graph",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon",
+    "build": "bun build ./index.ts --outdir dist --target bun",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write ."
+  },
+  "devDependencies": {
+    "@bootcamp/eslint-config": "workspace:*",
+    "@bootcamp/prettier-config": "workspace:*",
+    "@types/bun": "latest",
+    "nodemon": "^3.1.14",
+    "typescript": "^5.9.3"
+  },
+  "prettier": "@bootcamp/prettier-config"
+}

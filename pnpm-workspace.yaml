@@ -4,6 +4,7 @@ packages:
   - 'bootcamp/*'
   - 'bootcamp/*/*'
   - 'bootcamp/*/*/*'
+  - 'bootcamp/*/*/*/*'
   - 'packages/*'
   - 'playgrounds/*'
 allowBuilds:
