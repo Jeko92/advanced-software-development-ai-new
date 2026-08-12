@@ -51,7 +51,7 @@ importers:
         specifier: ^5.7.0
         version: 5.9.3
 
-  bootcamp/01-typescript/ts-advanced-setup/00-ts-advanced-demo:
+  bootcamp/01-typescript/ts-advanced-setup/00-ts-advanced:
     devDependencies:
       '@bootcamp/eslint-config':
         specifier: workspace:*
@@ -81,7 +81,7 @@ importers:
         specifier: ^5.7.0
         version: 5.9.3
 
-  bootcamp/01-typescript/ts-advanced-setup/01-extended-config-demo:
+  bootcamp/01-typescript/ts-advanced-setup/01-extended-config:
     devDependencies:
       '@bootcamp/eslint-config':
         specifier: workspace:*
@@ -99,7 +99,7 @@ importers:
         specifier: ^5.6.0
         version: 5.9.3
 
-  bootcamp/01-typescript/ts-advanced-setup/02-nodemon-demo:
+  bootcamp/01-typescript/ts-advanced-setup/02-nodemon:
     devDependencies:
       '@bootcamp/eslint-config':
         specifier: workspace:*
@@ -137,6 +137,30 @@ importers:
       nodemon:
         specifier: ^3.1.14
         version: 3.1.14
+      typescript:
+        specifier: ^5.6.0
+        version: 5.9.3
+
+  bootcamp/01-typescript/ts-advanced-setup/04-nodemon-tsx:
+    devDependencies:
+      '@bootcamp/eslint-config':
+        specifier: workspace:*
+        version: link:../../../../packages/eslint-config
+      '@bootcamp/prettier-config':
+        specifier: workspace:*
+        version: link:../../../../packages/prettier-config
+      '@bootcamp/tsconfig':
+        specifier: workspace:*
+        version: link:../../../../packages/tsconfig
+      '@types/node':
+        specifier: ^22.0.0
+        version: 22.20.1
+      nodemon:
+        specifier: ^3.1.14
+        version: 3.1.14
+      tsx:
+        specifier: ^4.19.0
+        version: 4.23.5
       typescript:
         specifier: ^5.6.0
         version: 5.9.3
