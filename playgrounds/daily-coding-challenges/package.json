@@ -8,7 +8,13 @@
     "try": "tsx",
     "next": "tsx src/index.ts",
     "solution": "tsx src/solution.ts",
-    "reset": "tsx src/reset.ts"
+    "reset": "tsx src/reset.ts",
+    "build": "tsc --project tsconfig.build.json",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "tsc --noEmit",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write ."
   },
   "devDependencies": {
     "@bootcamp/eslint-config": "workspace:*",

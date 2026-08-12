@@ -5,6 +5,10 @@ node_modules/
 dist/
 **/dist/
 
+# personal challenge cache/db
+.db/
+**/.db/**
+
 # TypeScript generated files
 *.js
 *.d.ts

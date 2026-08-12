@@ -3,6 +3,8 @@
   "compilerOptions": {
     "lib": ["ESNext", "DOM"],
     "types": ["node"],
+    "rootDir": ".",
+    "outDir": "./dist",
     "paths": {
       "@/*": ["./src/*"]
     }
