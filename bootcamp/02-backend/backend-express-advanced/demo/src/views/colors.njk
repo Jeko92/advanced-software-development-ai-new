@@ -5,7 +5,7 @@
   <h1>Hello Dolphins to {{ title }}</h1>
   <ul>
     {% for color in colors %}
-      <li>{{ColorMacros.ColorCard(color)}}</li>
+      <li>{{ ColorMacros.ColorCard(color) }}</li>
     {% else %}
       <p>Keine Farben :(</p>
     {% endfor %}
