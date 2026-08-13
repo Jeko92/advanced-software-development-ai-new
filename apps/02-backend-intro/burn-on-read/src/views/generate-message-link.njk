@@ -1,0 +1,33 @@
+{% extends '_base.njk' %}
+
+{% block content %}
+  <div>
+    <h2>Message has been successfully sent!📮🎉</h2>
+    <code id="message-link"> {{ link }} </code>
+    <button id="copy-button" type="button">Copy link</button>
+  </div>
+
+  <script>
+    const clipboard = document.getElementById('message-link');
+    const copyLinkButton = document.getElementById('copy-button');
+
+    copyLinkButton.addEventListener('click', () => {
+      const linkText = clipboard.textContent.trim();
+      writeClipboardText(linkText);
+    });
+
+    async function writeClipboardText(text) {
+      try {
+        await navigator.clipboard.writeText(text);
+        const originalText = copyLinkButton.textContent;
+        copyLinkButton.textContent = 'Copied!';
+        setTimeout(() => {
+          copyLinkButton.textContent = originalText;
+        }, 2000);
+      } catch (error) {
+        console.error(error.message);
+        copyLinkButton.textContent = 'Copy failed';
+      }
+    }
+  </script>
+{% endblock content %}
