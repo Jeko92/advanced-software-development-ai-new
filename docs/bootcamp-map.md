@@ -8,12 +8,12 @@
 | — Music App                               | `apps/00-side-projects/music-app`              | 🟢 ongoing |
 | — Q&A Forum                               | `apps/00-side-projects/qa-forum`               | 🟢 ongoing |
 | 0 Welcome / Leveling                      | `bootcamp/00-welcome`                          | 🟢         |
-| 1 TypeScript                              | `bootcamp/01-typescript`                       | ⬜         |
+| 1 TypeScript                              | `bootcamp/01-typescript`                       | 🟢         |
 | 1.1 TS Basics                             | `bootcamp/01-typescript/ts-basics`             | 🟢         |
 | 1.2 Client-Side TS                        | `bootcamp/01-typescript/ts-client-side`        | 🟢         |
 | 1.3 Advanced Setup                        | `bootcamp/01-typescript/ts-advanced-setup`     | 🟢         |
 | 1.4 Advanced                              | `bootcamp/01-typescript/ts-advanced `          | 🟢         |
-| 1.4 Recap Project                         | `apps/01-typescript`                           | ⬜         |
+| 1.4 Recap Project                         | `apps/01-typescript`                           | 🟢         |
 | 2 Introduction to Backend Web Development | `bootcamp/02-backend`                          | ⬜         |
 | 2.1 Backend Basics & Express              | `bootcamp/02-backend/backend-intro`            | ⬜         |
 | 2.2 Template Engines                      | `bootcamp/02-backend/backend-template-engines` | ⬜         |
