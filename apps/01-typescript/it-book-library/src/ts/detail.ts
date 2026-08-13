@@ -39,21 +39,29 @@ function renderBookDetail(book: BookDetail): void {
   currentIsbn = book.isbn;
 
   if (titleEl) {
-    titleEl.innerHTML = `
-            ${book.title}<br />
-            <small>${book.subtitle || ''}</small>
-        `;
+    titleEl.replaceChildren(book.title, document.createElement('br'));
+    const subtitleEl = document.createElement('small');
+    subtitleEl.textContent = book.subtitle || '';
+    titleEl.append(subtitleEl);
   }
   if (abstractEL)
     abstractEL.textContent = book.abstract || 'No abstract available';
 
   if (detailsListEl) {
-    detailsListEl.innerHTML = `
-            <li><strong>Author:</strong> ${book.author}</li>
-            <li><strong>Publisher:</strong> ${book.publisher}</li>
-            <li><strong>Pages:</strong> ${book.numPages}</li>
-            <li><strong>ISBN:</strong> ${book.isbn}</li>
-        `;
+    detailsListEl.replaceChildren();
+    const fields: [string, string][] = [
+      ['Author', book.author],
+      ['Publisher', book.publisher],
+      ['Pages', String(book.numPages)],
+      ['ISBN', book.isbn],
+    ];
+    for (const [label, value] of fields) {
+      const li = document.createElement('li');
+      const strong = document.createElement('strong');
+      strong.textContent = `${label}:`;
+      li.append(strong, ` ${value}`);
+      detailsListEl.append(li);
+    }
   }
 
   if (coverImgEl) {

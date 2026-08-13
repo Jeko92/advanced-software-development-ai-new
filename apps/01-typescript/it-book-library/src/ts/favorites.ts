@@ -51,24 +51,47 @@ function renderFavorites(booksToRender: BookList): void {
 
   booksToRender.forEach((book) => {
     const row = document.createElement('tr');
-    row.innerHTML = `
-            <td>
+
+    const favCell = document.createElement('td');
+    favCell.innerHTML = `
                 <button class="button button-clear fav-btn" title="Remove from favorites">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="fav">
                         <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z" clip-rule="evenodd" />
                     </svg>
                 </button>
-            </td>
-            <td>${book.title}</td>
-            <td>${book.isbn}</td>
-            <td>${book.author}</td>
-            <td>${book.publisher}</td>
-            <td>
-                <button class="button" onclick="location.href='detail.html?isbn=${book.isbn}'">Detail</button>
-            </td>
-        `;
+            `;
 
-    const removeBtn = row.querySelector('.fav-btn') as HTMLButtonElement;
+    const titleCell = document.createElement('td');
+    titleCell.textContent = book.title;
+
+    const isbnCell = document.createElement('td');
+    isbnCell.textContent = book.isbn;
+
+    const authorCell = document.createElement('td');
+    authorCell.textContent = book.author;
+
+    const publisherCell = document.createElement('td');
+    publisherCell.textContent = book.publisher;
+
+    const detailCell = document.createElement('td');
+    const detailBtn = document.createElement('button');
+    detailBtn.className = 'button';
+    detailBtn.textContent = 'Detail';
+    detailBtn.addEventListener('click', () => {
+      location.href = `detail.html?isbn=${encodeURIComponent(book.isbn)}`;
+    });
+    detailCell.append(detailBtn);
+
+    row.append(
+      favCell,
+      titleCell,
+      isbnCell,
+      authorCell,
+      publisherCell,
+      detailCell,
+    );
+
+    const removeBtn = favCell.querySelector('.fav-btn') as HTMLButtonElement;
     removeBtn.addEventListener('click', () => {
       removeFavorite(book.isbn);
       loadFavorites();

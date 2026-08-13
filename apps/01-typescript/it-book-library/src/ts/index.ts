@@ -40,8 +40,9 @@ function renderBooks(books: BookList): void {
   books.forEach((book) => {
     const isFav = favIsbns.includes(book.isbn);
     const row = document.createElement('tr');
-    row.innerHTML = `
-             <td>
+
+    const favCell = document.createElement('td');
+    favCell.innerHTML = `
                 <button class="button button-clear fav-btn" title="${isFav ? 'Remove from favorites' : 'Add to favorites'}">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                          fill="${isFav ? 'currentColor' : 'none'}"
@@ -49,17 +50,39 @@ function renderBooks(books: BookList): void {
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
                     </svg>
                 </button>
-            </td>
-            <td>${book.title}</td>
-            <td>${book.isbn}</td>
-            <td>${book.author}</td>
-            <td>${book.publisher}</td>
-            <td>
-                <button class="button" onclick="location.href='detail.html?isbn=${book.isbn}'">Detail</button>
-            </td>
-        `;
+            `;
 
-    const favBtn = row.querySelector('.fav-btn') as HTMLButtonElement;
+    const titleCell = document.createElement('td');
+    titleCell.textContent = book.title;
+
+    const isbnCell = document.createElement('td');
+    isbnCell.textContent = book.isbn;
+
+    const authorCell = document.createElement('td');
+    authorCell.textContent = book.author;
+
+    const publisherCell = document.createElement('td');
+    publisherCell.textContent = book.publisher;
+
+    const detailCell = document.createElement('td');
+    const detailBtn = document.createElement('button');
+    detailBtn.className = 'button';
+    detailBtn.textContent = 'Detail';
+    detailBtn.addEventListener('click', () => {
+      location.href = `detail.html?isbn=${encodeURIComponent(book.isbn)}`;
+    });
+    detailCell.append(detailBtn);
+
+    row.append(
+      favCell,
+      titleCell,
+      isbnCell,
+      authorCell,
+      publisherCell,
+      detailCell,
+    );
+
+    const favBtn = favCell.querySelector('.fav-btn') as HTMLButtonElement;
     favBtn.addEventListener('click', () => {
       toggleFavorite(book.isbn);
       renderBooks(books);
