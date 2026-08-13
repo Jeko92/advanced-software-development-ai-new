@@ -1,0 +1,22 @@
+[
+  {
+    "fruit": "apple",
+    "emoji": "🍎"
+  },
+  {
+    "fruit": "banana",
+    "emoji": "🍌"
+  },
+  {
+    "fruit": "orange",
+    "emoji": "🍊"
+  },
+  {
+    "fruit": "grape",
+    "emoji": "🍇"
+  },
+  {
+    "fruit": "strawberry",
+    "emoji": "🍓"
+  }
+]

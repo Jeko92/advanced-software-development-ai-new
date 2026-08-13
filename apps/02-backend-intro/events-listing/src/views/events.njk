@@ -1,0 +1,12 @@
+{% from "macros/eventCard.njk" import eventCard %}
+{% extends "_base.njk" %}
+
+{% block content %}
+  <div class="event-list">
+    {% for eventData in eventsData %}
+      {{ eventCard(eventData.name, eventData.date, eventData.location, eventData.soldOut) }}
+    {% else %}
+      <p>No events scheduled.</p>
+    {% endfor %}
+  </div>
+{% endblock %}

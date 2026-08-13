@@ -1,0 +1,18 @@
+{% import "macros/events.njk" as eventMacros %}
+{% extends "_base.njk" %}
+{% block body %}
+  <h1>Upcoming Events</h1>
+
+  <ul>
+    {% for event in events %}
+      <li>
+        {% if loop.first %}
+          <span class="badge badge-featured">Featured</span>
+        {% endif %}
+        {{ eventMacros.eventCard(event.name, event.date, event.location, event.spotsLeft) }}
+      </li>
+    {% else %}
+      <p>No upcoming events.</p>
+    {% endfor %}
+  </ul>
+{% endblock %}

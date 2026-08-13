@@ -1,0 +1,16 @@
+{% extends "_base.njk" %}
+{% block body %}
+  <h1>Blog</h1>
+
+  <ul>
+    {% for post in posts %}
+      <li class="blog-post">
+        <h3>{{ post.title }}</h3>
+        <p><em>{{ post.publishedAt }} — {{ post.author }}</em></p>
+        <p>{{ post.excerpt }}</p>
+      </li>
+    {% else %}
+      <p>No blog posts yet.</p>
+    {% endfor %}
+  </ul>
+{% endblock %}
