@@ -33,6 +33,18 @@ importers:
         specifier: ^6.0.3
         version: 6.0.3
 
+  apps/01-typescript/it-book-library:
+    devDependencies:
+      '@bootcamp/eslint-config':
+        specifier: workspace:*
+        version: link:../../../packages/eslint-config
+      '@bootcamp/tsconfig':
+        specifier: workspace:*
+        version: link:../../../packages/tsconfig
+      vite:
+        specifier: ^8.2.0
+        version: 8.2.0(@types/node@22.20.1)(esbuild@0.28.1)(tsx@4.23.5)
+
   bootcamp/00-welcome:
     devDependencies:
       '@bootcamp/eslint-config':
@@ -2722,6 +2734,19 @@ snapshots:
       punycode: 2.3.1
 
   url-join@4.0.1: {}
+
+  vite@8.2.0(@types/node@22.20.1)(esbuild@0.28.1)(tsx@4.23.5):
+    dependencies:
+      lightningcss: 1.33.0
+      picomatch: 4.0.5
+      postcss: 8.5.25
+      rolldown: 1.2.2
+      tinyglobby: 0.2.17
+    optionalDependencies:
+      '@types/node': 22.20.1
+      esbuild: 0.28.1
+      fsevents: 2.3.3
+      tsx: 4.23.5
 
   vite@8.2.0(@types/node@26.1.2)(esbuild@0.28.1)(tsx@4.23.5):
     dependencies:
