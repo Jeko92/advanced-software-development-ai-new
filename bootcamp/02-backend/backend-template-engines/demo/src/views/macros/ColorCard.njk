@@ -1,0 +1,7 @@
+{% macro ColorCard(color) %}
+  <article class="color-card" style="--color: {{color.hex}}">
+    <h2>{{color.name}}</h2>
+    <p>{{color.hex}}</p>
+    <p><span>r: {{color.rgb.r}}</span><span>g: {{color.rgb.g}}</span><span>b: {{color.rgb.b}}</span></p>
+  </article>
+{% endmacro %}
