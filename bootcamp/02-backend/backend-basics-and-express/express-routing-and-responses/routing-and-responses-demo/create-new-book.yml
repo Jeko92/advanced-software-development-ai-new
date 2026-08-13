@@ -1,0 +1,25 @@
+info:
+  name: create-new-book
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: http://localhost:3000/books/
+  body:
+    type: json
+    data: |-
+      {
+        "title": "Idiot",
+        "author": "Fyodor Dostoevsky",
+        "year": 1925,
+        "isbn": "978-0-7432-7356-5",
+        "genre": "Classic"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

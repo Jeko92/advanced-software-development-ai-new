@@ -1,0 +1,26 @@
+info:
+  name: partially-update-book-by-id
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: http://localhost:3000/books/9
+  body:
+    type: json
+    data: |-
+      {
+        "id": 9,
+        "title": "Idiot",
+        "author": "Fyodor Dostoevsky",
+        "year": 1930,
+        "isbn": "978-0-7432-7356-5",
+        "genre": "Classic"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

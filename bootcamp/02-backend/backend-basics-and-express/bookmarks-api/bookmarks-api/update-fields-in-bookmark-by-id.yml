@@ -1,0 +1,26 @@
+info:
+  name: Update fields in bookmark by ID
+  type: http
+  seq: 6
+
+http:
+  method: PATCH
+  url: '{{base_url}}/bookmarks/4'
+  body:
+    type: json
+    data: |-
+      {
+        "title": "HTTP request methods Patch"
+      }
+  auth: inherit
+
+runtime:
+  variables:
+    - name: id
+      value: ''
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

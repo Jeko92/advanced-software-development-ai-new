@@ -1,0 +1,34 @@
+opencollection: 1.0.0
+
+info:
+  name: bookmarks-api-bruno
+config:
+  proxy:
+    inherit: true
+    config:
+      protocol: http
+      hostname: ''
+      port: ''
+      auth:
+        username: ''
+        password: ''
+      bypassProxy: ''
+
+request:
+  variables:
+    - name: base_url
+      value: http://localhost:3000
+    - name: id
+      value:
+        type: number
+        data: ''
+bundled: false
+extensions:
+  bruno:
+    ignore:
+      - node_modules
+      - .git
+    presets:
+      request:
+        type: http
+        url: http://localhost:3000

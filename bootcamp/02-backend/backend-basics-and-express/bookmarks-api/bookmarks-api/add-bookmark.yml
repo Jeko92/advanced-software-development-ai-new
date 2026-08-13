@@ -1,0 +1,23 @@
+info:
+  name: Add Bookmark
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: '{{base_url}}/bookmarks/'
+  body:
+    type: json
+    data: |-
+      {
+        "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods",
+        "title": "HTTP request methods",
+        "tag": "http-request-methods"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

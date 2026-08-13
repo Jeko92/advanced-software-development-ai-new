@@ -1,0 +1,29 @@
+info:
+  name: update-book-by-isbn
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: http://localhost:4730/books/1001606140808
+  body:
+    type: json
+    data: |-
+      {
+        "title": "test-book-updated-PUT",
+        "subtitle": "Some subtitle",
+        "isbn": "1001606140808",
+        "abstract": "lorem ipsum",
+        "numPages": 123,
+        "author": "max mustermann",
+        "publisher": "john doe",
+        "price": "$15",
+        "cover": "http://localhost:4730/covers/1001606140805.png"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
