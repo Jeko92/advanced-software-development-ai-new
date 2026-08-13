@@ -1,0 +1,56 @@
+nav,
+main,
+footer {
+  padding: 1rem 3rem;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  min-block-size: 100dvh;
+}
+
+main {
+  flex: 1;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+ul li:is(:not:first-child) {
+  margin-block-start: 1.5rem;
+}
+
+.color-card {
+  --color: gray;
+  background-color: var(--color);
+}
+
+h1 {
+  color: coral;
+}
+
+textarea {
+  padding: 1rem;
+  margin: 1rem 0;
+  max-inline-size: 80vw;
+  border: 0.125rem solid rebeccapurple;
+  resize: vertical;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.6em 1.2em;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

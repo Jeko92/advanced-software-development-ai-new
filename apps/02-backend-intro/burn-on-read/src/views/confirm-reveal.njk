@@ -1,0 +1,14 @@
+{% extends '_base.njk' %}
+
+{% block content %}
+  <div>
+    <h2>Someone sent you a secret message</h2>
+    <p>
+      This message can only be viewed once. After you reveal it, it will be
+      permanently deleted.
+    </p>
+    <form method="POST" action="/messages/{{ id }}/reveal">
+      <button type="submit">Reveal message</button>
+    </form>
+  </div>
+{% endblock content %}

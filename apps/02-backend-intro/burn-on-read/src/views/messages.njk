@@ -1,0 +1,21 @@
+{% extends "_base.njk" %}
+
+{% block content %}
+  <section class="hero">
+    <h1>Write your message</h1>
+    <form id="message-form" method="POST" action="/messages">
+      <label for="message-text"></label>
+      <textarea
+        id="message-text"
+        name="secret-message"
+        type="textarea"
+        cols="20"
+        rows="15"
+        placeholder="Write your message here..."
+        spellcheck="true"
+        form="message-form"
+      ></textarea>
+      <button type="submit" form="message-form">Send your secret</button>
+    </form>
+  </section>
+{% endblock content %}
