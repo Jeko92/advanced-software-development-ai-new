@@ -1,0 +1,15 @@
+{
+  "name": "@bootcamp/backend-basics-api-clients-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm dlx bookmonkey-api",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write ."
+  },
+  "devDependencies": {
+    "@bootcamp/prettier-config": "workspace:*",
+    "bookmonkey-api": "^3.2.0"
+  }
+}
