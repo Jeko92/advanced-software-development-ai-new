@@ -1,0 +1,97 @@
+:root {
+  --primary: #9b4dca;
+  --secondary: #606c76;
+}
+
+.header {
+  background: #f4f5f6;
+  padding-block-start: 1.5625rem;
+  margin-block-end: 2.5rem;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 2.7rem;
+}
+
+.mainnav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mainnav-link {
+  margin-inline: 0.625rem;
+  line-height: 4.7rem;
+  color: var(--secondary);
+  border-block-end: 0.1875rem solid transparent;
+}
+
+.mainnav-link:hover {
+  color: var(--primary);
+}
+
+.mainnav-link.mainnav-link--active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+.mainnav-number {
+  background-color: var(--primary);
+  color: #f4f5f6;
+  padding: 0 5px;
+  border-radius: 50%;
+}
+
+main .fav-btn {
+  padding: 0;
+  margin-block-end: -2.8125rem;
+}
+
+.fav {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.first-col {
+  inline-size: 5%;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-block-end: 2rem;
+}
+
+.title {
+  flex: 1;
+  min-inline-size: 0;
+}
+
+.title h1 {
+  margin: 0;
+}
+.subtitle {
+  margin: 0.25rem 0 0;
+  color: var(--secondary);
+  font-size: 1rem;
+}
+
+.fav-detail-btn {
+  flex-shrink: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.fav {
+  inline-size: 3rem;
+  block-size: 3rem;
+}
+
+.button-clear {
+  padding: 0;
+  block-size: auto;
+}

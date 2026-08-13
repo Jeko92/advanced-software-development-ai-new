@@ -1,5 +1,6 @@
 packages:
   - 'apps/0[1-8]-*'
+  - 'apps/0[1-8]-*/*'
   - 'apps/00-side-projects/*'
   - 'bootcamp/*'
   - 'bootcamp/*/*'

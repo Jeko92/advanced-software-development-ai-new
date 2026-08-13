@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"
+    />
+
+    <!-- CSS Reset -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
+
+    <!-- Milligram CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <!-- You should properly set the path from the main file. -->
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="column">
+            <a href="index.html">
+              <span class="logo">IT.Book.Library</span>
+            </a>
+          </div>
+          <div class="column">
+            <nav class="mainnav">
+              <a href="index.html" class="mainnav-link">Books</a>
+
+              <a href="favorite.html" class="mainnav-link mainnav-link--active"
+                >Favorites<span class="mainnav-number">0</span>
+              </a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="container">
+      <h2 id="favorites-count">Favorites on your list</h2>
+      <section class="row filter-search">
+        <form action="#" class="column">
+          <label for="search">Search</label>
+          <input type="text" id="search" />
+        </form>
+
+        <form action="#" class="column column-33">
+          <label for="by-publisher">Filter by Publisher</label>
+          <select id="by-publisher">
+            <option value="-">-</option>
+          </select>
+        </form>
+      </section>
+      <section class="row">
+        <div class="column">
+          <table id="favorites-list">
+            <thead>
+              <tr>
+                <th class="first-col">&nbsp;</th>
+                <th>Title</th>
+                <th>ISBN</th>
+                <th>Author</th>
+                <th>Publisher</th>
+                <th>&nbsp;</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="./ts/favorites.ts"></script>
+  </body>
+</html>
