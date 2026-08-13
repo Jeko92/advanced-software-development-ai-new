@@ -5,7 +5,9 @@
     {% if spotsLeft == 0 %}
       <span class="badge badge-sold-out">Sold out</span>
     {% elif spotsLeft < 10 %}
-      <span class="badge badge-almost-full">Almost full — {{ spotsLeft }} spots left</span>
+      <span class="badge badge-almost-full"
+        >Almost full — {{ spotsLeft }} spots left</span
+      >
     {% else %}
       <span class="badge badge-available">Tickets available</span>
     {% endif %}

@@ -5,7 +5,7 @@ export default {
   plugins: ['prettier-plugin-jinja-template'],
   overrides: [
     {
-      files: ['*.html'],
+      files: ['*.njk'],
       options: {
         parser: 'jinja-template',
       },

@@ -11,16 +11,16 @@
 
   <table>
     <thead>
-    <th>Name</th>
-    <th>Emoji</th>
+      <th>Name</th>
+      <th>Emoji</th>
     </thead>
     <tbody>
-    {% for fruitData in fruitsData %}
-      <tr>
-        <td>{{ fruitData.fruit }}</td>
-        <td>{{ fruitData.emoji }}</td>
-      </tr>
-    {% endfor %}
+      {% for fruitData in fruitsData %}
+        <tr>
+          <td>{{ fruitData.fruit }}</td>
+          <td>{{ fruitData.emoji }}</td>
+        </tr>
+      {% endfor %}
     </tbody>
   </table>
 {% endblock %}
