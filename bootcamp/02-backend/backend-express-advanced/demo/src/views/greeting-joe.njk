@@ -1,0 +1,20 @@
+{% extends '_base.njk' %} {% block content %}
+
+
+  <script>
+    fetch('/api/greeting/Joe')
+    .then(res => res.json())
+    .then(data => {
+      const h1 = document.createElement('h1');
+      h1.textContent = data.message;
+      document.body.appendChild(h1);
+    })
+    .catch(error => {
+      console.error('Error', error);
+      const h1 = document.createElement('h1');
+      h1.textContent = 'Error fetching greeting';
+      document.body.appendChild(h1);
+    });
+  </script>
+
+{% endblock %}
