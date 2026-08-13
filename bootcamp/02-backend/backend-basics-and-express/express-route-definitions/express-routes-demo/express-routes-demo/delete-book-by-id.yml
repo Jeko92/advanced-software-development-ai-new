@@ -1,0 +1,18 @@
+info:
+  name: delete-book-by-id
+  type: http
+  seq: 5
+
+http:
+  method: DELETE
+  url: http://localhost:3000/books/1
+  body:
+    type: json
+    data: ''
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
