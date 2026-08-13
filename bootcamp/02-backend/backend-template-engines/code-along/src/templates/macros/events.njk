@@ -1,0 +1,13 @@
+{% macro eventCard(name, date, location, spotsLeft=0) %}
+  <article class="event-card">
+    <h3>{{ name }}</h3>
+    <p>{{ date }} — {{ location }}</p>
+    {% if spotsLeft == 0 %}
+      <span class="badge badge-sold-out">Sold out</span>
+    {% elif spotsLeft < 10 %}
+      <span class="badge badge-almost-full">Almost full — {{ spotsLeft }} spots left</span>
+    {% else %}
+      <span class="badge badge-available">Tickets available</span>
+    {% endif %}
+  </article>
+{% endmacro %}

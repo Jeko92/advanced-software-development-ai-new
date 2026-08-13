@@ -1,0 +1,62 @@
+*,
+*::before,
+*::after,
+html,
+body {
+  box-sizing: border-box;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 3rem;
+}
+
+ul {
+  list-style-type: square;
+}
+
+li {
+  padding-block-start: 1rem;
+  margin: 1rem;
+}
+
+table {
+  border: 0.25rem solid rebeccapurple;
+}
+
+.event-card {
+  border: 0.125rem solid rebeccapurple;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.badge {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.badge-featured {
+  background-color: gold;
+}
+
+.badge-sold-out {
+  background-color: lightcoral;
+}
+
+.badge-almost-full {
+  background-color: khaki;
+}
+
+.badge-available {
+  background-color: lightgreen;
+}
+
+.blog-post {
+  margin-block-end: 1.5rem;
+}

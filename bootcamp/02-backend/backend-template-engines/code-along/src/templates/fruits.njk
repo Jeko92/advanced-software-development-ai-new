@@ -1,0 +1,26 @@
+{% extends "_base.njk" %}
+{% block body %}
+  <h1>Fruits</h1>
+  <ul>
+    {% for fruitData in fruitsData %}
+      <li>{{ fruitData.fruit }} - {{ fruitData.emoji }}</li>
+    {% else %}
+      <li>This would display if the 'item' collection were empty</li>
+    {% endfor %}
+  </ul>
+
+  <table>
+    <thead>
+    <th>Name</th>
+    <th>Emoji</th>
+    </thead>
+    <tbody>
+    {% for fruitData in fruitsData %}
+      <tr>
+        <td>{{ fruitData.fruit }}</td>
+        <td>{{ fruitData.emoji }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
