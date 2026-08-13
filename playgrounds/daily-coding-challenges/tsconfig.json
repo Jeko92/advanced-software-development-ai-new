@@ -1,0 +1,15 @@
+{
+  "extends": "@bootcamp/tsconfig/base.json",
+  "compilerOptions": {
+    "lib": ["ESNext", "DOM"],
+    "types": ["node"],
+    "rewriteRelativeImportExtensions": false,
+    "rootDir": ".",
+    "outDir": "./dist",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src/**/*", "challenges/**/*"],
+  "exclude": ["node_modules", ".db"]
+}

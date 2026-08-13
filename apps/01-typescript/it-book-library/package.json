@@ -1,0 +1,30 @@
+{
+  "name": "@bootcamp/it-book-library",
+  "version": "1.0.0",
+  "description": "A TypeScript recap project from the neuefische Advanced Software Development with AI bootcamp. An IT book library application with REST API integration, filtering, details view, and persistent favorites.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "tsc --noEmit",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write ."
+  },
+  "keywords": [
+    "typescript",
+    "rest-api",
+    "dom-manipulation",
+    "bootcamp",
+    "neuefische"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@bootcamp/eslint-config": "workspace:*",
+    "@bootcamp/tsconfig": "workspace:*",
+    "vite": "^8.2.0"
+  }
+}

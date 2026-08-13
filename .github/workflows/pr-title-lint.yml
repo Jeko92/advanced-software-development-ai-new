@@ -1,7 +1,12 @@
 name: PR Title Lint
+
 on:
   pull_request:
     types: [opened, edited, synchronize]
+
+permissions:
+  pull-requests: read
+
 jobs:
   lint-pr-title:
     runs-on: ubuntu-latest

@@ -1,0 +1,9 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./film-watchlist" },
+    { "path": "./music-library" },
+    { "path": "./online-shop" },
+    { "path": "./recipe-book" }
+  ]
+}

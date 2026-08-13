@@ -2,6 +2,7 @@
   "name": "@bootcamp/tsconfig",
   "version": "1.0.0",
   "description": "Shared TypeScript compiler configurations for the monorepo",
+  "type": "module",
   "main": "base.json",
   "private": true,
   "license": "MIT"

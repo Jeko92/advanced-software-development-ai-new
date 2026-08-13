@@ -1,0 +1,14 @@
+{
+  "extends": "@bootcamp/tsconfig/base.json",
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["ESNext", "DOM"],
+    "types": ["node"],
+    "allowImportingTsExtensions": true,
+    "strict": true
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules", "**/dist/**"]
+}

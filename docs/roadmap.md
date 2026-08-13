@@ -2,8 +2,8 @@
 
 - [ ] Part 00 — Daily Coding Challenges and Daily Warmup Challenges(ongoing)
 - [ ] Part 01 — Side Projects (ongoing)
-- [ ] Part 0 — Welcome / Leveling
-- [ ] Part 1 — TypeScript (Basics, Client-Side, Advanced Setup, Advanced, Recap)
+- [x] Part 0 — Welcome / Leveling
+- [x] Part 1 — TypeScript (Basics, Client-Side, Advanced Setup, Advanced, Recap)
 - [ ] Part 2 — Web Backend Intro
 - [ ] Part 3 — Software Design
 - [ ] Part 4 — NestJS

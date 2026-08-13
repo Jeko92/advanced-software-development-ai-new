@@ -1,0 +1,56 @@
+[
+  {
+    "id": "1",
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "isbn": "978-0132-350884",
+    "isAvailable": true,
+    "createdAt": "2024-01-10T09:00:00.000Z",
+    "updatedAt": "2024-01-10T09:00:00.000Z"
+  },
+  {
+    "id": "2",
+    "title": "Refactoring",
+    "author": "Martin Fowler",
+    "isbn": "978-0201-485677",
+    "isAvailable": true,
+    "createdAt": "2024-02-14T12:30:00.000Z",
+    "updatedAt": "2024-02-14T12:30:00.000Z"
+  },
+  {
+    "id": "3",
+    "title": "The Pragmatic Programmer",
+    "author": "David Thomas",
+    "isbn": "978-0135-957059",
+    "isAvailable": false,
+    "createdAt": "2024-03-01T08:15:00.000Z",
+    "updatedAt": "2024-03-01T08:15:00.000Z"
+  },
+  {
+    "id": "4",
+    "title": "Domain-Driven Design",
+    "author": "Eric Evans",
+    "isbn": "978-0321-125217",
+    "isAvailable": true,
+    "createdAt": "2024-03-20T16:45:00.000Z",
+    "updatedAt": "2024-03-20T16:45:00.000Z"
+  },
+  {
+    "id": "5",
+    "title": "Working Effectively with Legacy Code",
+    "author": "Michael Feathers",
+    "isbn": "978-0131-177055",
+    "isAvailable": true,
+    "createdAt": "2024-04-05T10:00:00.000Z",
+    "updatedAt": "2024-04-05T10:00:00.000Z"
+  },
+  {
+    "id": "6",
+    "title": "Clean Architecture",
+    "author": "Robert C. Martin",
+    "isbn": "978-0134-494166",
+    "isAvailable": true,
+    "createdAt": "2024-05-12T11:20:00.000Z",
+    "updatedAt": "2024-05-12T11:20:00.000Z"
+  }
+]
