@@ -1,0 +1,13 @@
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+.color-card {
+  --color: gray;
+  background-color: var(--color);
+}
