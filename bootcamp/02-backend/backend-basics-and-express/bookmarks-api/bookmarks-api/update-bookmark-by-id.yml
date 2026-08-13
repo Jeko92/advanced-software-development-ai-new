@@ -1,0 +1,22 @@
+info:
+  name: Update(replace) bookmark by ID
+  type: http
+  seq: 7
+
+http:
+  method: PUT
+  url: '{{base_url}}/bookmarks/:id?id='
+  params:
+    - name: id
+      value: ''
+      type: query
+    - name: id
+      value: ''
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
