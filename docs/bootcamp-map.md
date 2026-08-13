@@ -15,7 +15,7 @@
 | 1.4 Advanced                              | `bootcamp/01-typescript/ts-advanced `          | 🟢         |
 | 1.4 Recap Project                         | `apps/01-typescript`                           | 🟢         |
 | 2 Introduction to Backend Web Development | `bootcamp/02-backend`                          | ⬜         |
-| 2.1 Backend Basics & Express              | `bootcamp/02-backend/backend-intro`            | ⬜         |
+| 2.1 Backend Basics & Express              | `bootcamp/02-backend/backend-intro`            | 🟢         |
 | 2.2 Template Engines                      | `bootcamp/02-backend/backend-template-engines` | ⬜         |
 | 2.3 Express Advanced                      | `bootcamp/02-backend/backend-express-advanced` | ⬜         |
 | 2.4 MVC Pattern                           | `bootcamp/02-backend/backend-mvc-pattern`      | ⬜         |
