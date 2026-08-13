@@ -1,0 +1,3 @@
+# Vendored Start Bootstrap "Clean Blog" theme assets — keep byte-identical
+# to upstream so future theme updates stay a clean diff.
+public/

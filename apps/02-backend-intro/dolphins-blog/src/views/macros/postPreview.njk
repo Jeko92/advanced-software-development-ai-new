@@ -1,0 +1,19 @@
+{% macro render(post) %}
+  <div class="post-preview">
+    <a href="/post/{{ post.slug }}">
+      <h2 class="post-title text-white">{{ post.title }}</h2>
+
+      {% if post.teaser %}
+        <h3 class="post-subtitle text-white">{{ post.teaser }}</h3>
+      {% endif %}
+    </a>
+
+    <p class="post-meta text-white">
+      Posted by
+      <a href="#!" style='color:#71a1a4'>{{ post.author }}</a>
+      on {{ post.formattedDate }}
+    </p>
+  </div>
+
+  <hr class="my-4"/>
+{% endmacro %}
