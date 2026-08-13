@@ -1,7 +1,7 @@
 opencollection: 1.0.0
 
 info:
-  name: express-routes-demo
+  name: routing-and-responses-demo
 config:
   proxy:
     inherit: true
