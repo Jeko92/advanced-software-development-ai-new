@@ -1,0 +1,15 @@
+meta {
+  name: Get Blog By Id (Not Found)
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/api/blogs/999
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 404
+}
