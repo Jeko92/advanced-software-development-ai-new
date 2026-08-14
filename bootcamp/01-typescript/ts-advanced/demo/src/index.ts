@@ -3,7 +3,7 @@
 // utility types
 // generics
 
-import type { Media, mediaType } from './types';
+import type { Media, mediaType } from './types.ts';
 
 type Timestamped = {
   createdAt: Date;
