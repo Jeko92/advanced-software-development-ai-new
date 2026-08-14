@@ -1,0 +1,12 @@
+{% extends "_base.njk" %}
+
+{% block content %}
+  <h1>All Blogs are Beautiful</h1>
+  <ul>
+    {% for post in posts %}
+      <li>
+        <a href="/blog/{{ post.slug }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock content %}

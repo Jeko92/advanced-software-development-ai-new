@@ -6,8 +6,8 @@ import type {
   BookUpdatePayload,
   EntityId,
   IsbnParts,
-} from './types/book';
-import rawBooks from './data/books.json';
+} from './types/book.ts';
+import rawBooks from './data/books.json' with { type: 'json' };
 
 const books: Book[] = rawBooks.map((book) => ({
   ...book,
@@ -102,7 +102,11 @@ export const updateBook = async (
 export const parseIsbn = (isbn: string): IsbnParts => {
   const [group, publisher, titleCode] = isbn.split('-');
 
-  if (group === undefined || publisher === undefined || titleCode === undefined) {
+  if (
+    group === undefined ||
+    publisher === undefined ||
+    titleCode === undefined
+  ) {
     throw new Error(`"${isbn}" is not a valid group-publisher-titleCode ISBN`);
   }
 

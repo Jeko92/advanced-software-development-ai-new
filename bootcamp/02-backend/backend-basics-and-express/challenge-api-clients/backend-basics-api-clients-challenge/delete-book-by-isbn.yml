@@ -1,0 +1,21 @@
+info:
+  name: delete-book-by-isbn
+  type: http
+  seq: 6
+
+http:
+  method: DELETE
+  url: http://localhost:4730/books/1001606140808
+  body:
+    type: json
+    data: |-
+      {
+        "isbn": "1001606140808"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

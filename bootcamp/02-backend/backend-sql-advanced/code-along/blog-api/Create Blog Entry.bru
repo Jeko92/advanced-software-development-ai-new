@@ -1,0 +1,26 @@
+meta {
+  name: Create Blog Entry
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{baseUrl}}/api/blog-entries
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "title": "Cold brew for hot days",
+    "teaser": "A slower, smoother way to caffeinate.",
+    "authorId": 1,
+    "createdAt": "2026-05-01",
+    "image": "/images/cold-brew.jpg",
+    "content": "Cold brew steeps for twelve hours in cold water, resulting in a smoother, less acidic cup."
+  }
+}
+
+assert {
+  res.status: eq 201
+}

@@ -1,0 +1,40 @@
+{% extends "layouts/_base.njk" %}
+{% from "macros/trail-card.njk" import trailCard %}
+
+{% block hero %}
+  <header class="hero-home">
+    <hgroup>
+      <h1>Trail Guide</h1>
+      <p>Discover scenic hiking trails across Europe.</p>
+    </hgroup>
+
+    <p>
+      Trail Guide is a small demonstration project built with Express, Nunjucks
+      and SQLite. Browse hiking destinations, explore regions and discover
+      trails for every experience level.
+    </p>
+
+    <a href="/regions" role="button"> Browse Regions </a>
+  </header>
+{% endblock %}
+
+{% block main_content %}
+  <hr />
+  <h2>Featured Trails</h2>
+  <section class="grid">
+    {% if trails.length %}
+
+      {% for trail in trails %}
+        {{ trailCard(trail) }}
+      {% endfor %}
+    {% else %}
+      <article>
+        <p>No trails available yet.</p>
+      </article>
+    {% endif %}
+  </section>
+
+  <p class="text-center">
+    <a href="/trails" role="button">See all trails</a>
+  </p>
+{% endblock %}

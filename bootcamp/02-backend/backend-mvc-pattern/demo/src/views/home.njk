@@ -1,0 +1,18 @@
+{% extends "_base.njk" %}
+{% block content %}
+  <h1>Backend MVC Pattern Demo</h1>
+
+  <p>
+    This demo splits an Express app into routes, controllers, and models to show
+    how the MVC pattern separates request handling from data access and
+    presentation.
+  </p>
+
+  <ul>
+    <li><a href="/blog">Blog</a> — posts read from Markdown files</li>
+    <li>
+      <a href="/colors">Colors</a> — an in-memory dataset with HTML and JSON
+      views
+    </li>
+  </ul>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "layouts/_base.njk" %}
+
+{% block main_content %}
+  <article>
+    <header>
+      <h1>500 — Something Went Wrong</h1>
+
+      <p>An unexpected error occurred while processing your request.</p>
+    </header>
+
+    <p>
+      Please try again in a few moments. If the problem persists, the
+      application may require maintenance.
+    </p>
+
+    <details>
+      <summary>What can I do?</summary>
+
+      <ul>
+        <li>Refresh the page.</li>
+        <li>Return to the homepage.</li>
+        <li>Try again later.</li>
+      </ul>
+    </details>
+
+    <footer>
+      <a href="/" role="button"> Back to Home </a>
+    </footer>
+  </article>
+{% endblock %}

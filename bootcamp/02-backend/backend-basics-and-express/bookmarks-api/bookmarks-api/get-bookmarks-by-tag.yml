@@ -1,0 +1,24 @@
+info:
+  name: Get(Filter) bookmarks by tag
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: '{{base_url}}/bookmarks?tag={{topic}}'
+  params:
+    - name: tag
+      value: '{{topic}}'
+      type: query
+  auth: inherit
+
+runtime:
+  variables:
+    - name: topic
+      value: ''
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -10,3 +10,5 @@ packages:
   - 'playgrounds/*'
 allowBuilds:
   esbuild: true
+  protobufjs: false
+  sqlite3: true

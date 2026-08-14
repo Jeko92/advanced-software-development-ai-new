@@ -1,0 +1,29 @@
+info:
+  name: create-new-book
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: http://localhost:4730/books
+  body:
+    type: json
+    data: |-
+      {
+        "title": "test-book",
+        "subtitle": "Some subtitle",
+        "isbn": "1001606140808",
+        "abstract": "lorem ipsum",
+        "numPages": 123,
+        "author": "max mustermann",
+        "publisher": "john doe",
+        "price": "$15",
+        "cover": "http://localhost:4730/covers/1001606140805.png"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

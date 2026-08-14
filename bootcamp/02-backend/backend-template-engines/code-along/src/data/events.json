@@ -1,0 +1,20 @@
+[
+  {
+    "name": "React Conf",
+    "date": "June 10, 2026",
+    "location": "Berlin",
+    "spotsLeft": 42
+  },
+  {
+    "name": "Vue.js Summit",
+    "date": "July 2, 2026",
+    "location": "Amsterdam",
+    "spotsLeft": 4
+  },
+  {
+    "name": "Nunjucks Nights",
+    "date": "August 21, 2026",
+    "location": "Cologne",
+    "spotsLeft": 0
+  }
+]

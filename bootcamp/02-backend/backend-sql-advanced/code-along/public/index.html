@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+    <title>Backend SQL Advanced</title>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Backend SQL Advanced</h1>
+      <p>
+        This server reads and writes blog entries in a SQLite database, joined
+        against authors and tags in related tables. Try the JSON API:
+      </p>
+      <ul>
+        <li>
+          <code>GET /api/blog-entries</code> — all entries (INNER JOIN with
+          authors)
+        </li>
+        <li>
+          <code
+            >GET
+            /api/blog-entries/search?author=&amp;search=&amp;direction=&amp;limit=</code
+          >
+          — filtered, sorted, limited entries
+        </li>
+        <li>
+          <code>GET /api/blog-entries/:id</code> — a single entry, including its
+          tags (many-to-many via <code>blog_entry_tags</code>)
+        </li>
+        <li><code>POST /api/blog-entries</code> — create an entry</li>
+        <li><code>PUT /api/blog-entries/:id</code> — update an entry</li>
+        <li><code>DELETE /api/blog-entries/:id</code> — remove an entry</li>
+        <li>
+          <code>GET /api/authors</code> — all authors with their profile
+          (one-to-one, LEFT JOIN so authors without a profile still appear)
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>

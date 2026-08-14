@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>{{ title }}</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    {% block navigation %}
+      <div>
+        <a href="./"> Homepage</a>
+        <a href="./about"> About Us</a>
+        <a href="./fruits"> Fruits Data</a>
+        <a href="./events"> Events</a>
+        <a href="./blog"> Blog</a>
+      </div>
+    {% endblock %}
+
+    {% block body %}
+      {# default content goes here #}
+    {% endblock %}
+  </body>
+</html>

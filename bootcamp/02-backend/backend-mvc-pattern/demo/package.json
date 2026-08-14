@@ -1,0 +1,32 @@
+{
+  "name": "@bootcamp/backend-mvc-pattern-demo",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx --watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "tsc --noEmit",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write ."
+  },
+  "devDependencies": {
+    "@bootcamp/eslint-config": "workspace:*",
+    "@bootcamp/prettier-config": "workspace:*",
+    "@bootcamp/tsconfig": "workspace:*",
+    "@types/node": "^26.2.0",
+    "@types/express": "^5.0.6",
+    "@types/nunjucks": "^3.2.6",
+    "prettier-plugin-jinja-template": "^2.2.0",
+    "tsx": "^4.23.1",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "marked": "^18.0.7",
+    "nunjucks": "^3.2.4"
+  }
+}

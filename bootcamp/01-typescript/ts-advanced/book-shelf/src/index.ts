@@ -1,13 +1,13 @@
-import type { Book, EntityId } from './types/book';
+import type { Book, EntityId } from './types/book.ts';
 import {
   createBook,
   fetchBook,
   fetchBooks,
   parseIsbn,
   updateBook,
-} from './bookService';
-import { groupBy, merge, pluck } from './collectionUtils';
-import { EventEmitter } from './eventEmitter';
+} from './bookService.ts';
+import { groupBy, merge, pluck } from './collectionUtils.ts';
+import { EventEmitter } from './eventEmitter.ts';
 
 /*******************************************************/
 /* Challenge 1 - BookShelf type layer + service module  */
@@ -18,7 +18,9 @@ const { data: previews } = await fetchBooks();
 console.log(previews);
 
 const books: Book[] = await Promise.all(
-  previews.map(( preview ) => fetchBook(preview.id).then(( response ) => response.data)),
+  previews.map((preview) =>
+    fetchBook(preview.id).then((response) => response.data),
+  ),
 );
 
 console.log('******* fetchBook: success *******');
@@ -27,7 +29,7 @@ console.log(books[0]);
 console.log('******* fetchBook: not found *******');
 try {
   await fetchBook('does-not-exist');
-} catch ( err ) {
+} catch (err) {
   console.error((err as Error).message);
 }
 
@@ -47,7 +49,7 @@ const { data: updatedBook } = await updateBook(createdBook.id, {
 console.log(updatedBook);
 
 console.log('******* parseIsbn *******');
-const [ group, publisher, titleCode ] = parseIsbn(books[0]!.isbn);
+const [group, publisher, titleCode] = parseIsbn(books[0]!.isbn);
 console.log({ group, publisher, titleCode });
 
 /*******************************************************/
@@ -78,16 +80,19 @@ type BookEvents = {
 
 const emitter = new EventEmitter<BookEvents>();
 
-emitter.on('bookAdded', ( book ) => {
+emitter.on('bookAdded', (book) => {
   console.log('[bookAdded]', book.title);
 });
 
-emitter.on('bookRemoved', ( payload ) => {
+emitter.on('bookRemoved', (payload) => {
   console.log('[bookRemoved]', payload.id);
 });
 
-emitter.on('searchPerformed', ( payload ) => {
-  console.log('[searchPerformed]', `"${payload.query}" -> ${payload.resultCount} result(s)`);
+emitter.on('searchPerformed', (payload) => {
+  console.log(
+    '[searchPerformed]',
+    `"${payload.query}" -> ${payload.resultCount} result(s)`,
+  );
 });
 
 console.log('******* EventEmitter *******');

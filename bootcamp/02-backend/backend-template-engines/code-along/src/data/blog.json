@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Why Template Engines Still Matter",
+    "author": "Jamie Lee",
+    "publishedAt": "January 12, 2026",
+    "excerpt": "Not every app needs a frontend framework. Template engines like Nunjucks keep things simple when your UI does not need to be highly dynamic."
+  },
+  {
+    "title": "Sharing Layouts with Template Inheritance",
+    "author": "Priya Nair",
+    "publishedAt": "February 3, 2026",
+    "excerpt": "A base template plus a couple of named blocks is all it takes to stop copy-pasting headers and footers across every page."
+  },
+  {
+    "title": "Building Reusable Cards with Macros",
+    "author": "Tom Becker",
+    "publishedAt": "March 18, 2026",
+    "excerpt": "Macros behave like functions for your markup: define the HTML once, call it with different data wherever you need it."
+  }
+]

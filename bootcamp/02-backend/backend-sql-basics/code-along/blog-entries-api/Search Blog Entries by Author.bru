@@ -1,0 +1,15 @@
+meta {
+  name: Search Blog Entries by Author
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/api/blog-entries/search?author=Anna
+  body: none
+  auth: none
+}
+
+params:query {
+  author: Anna
+}

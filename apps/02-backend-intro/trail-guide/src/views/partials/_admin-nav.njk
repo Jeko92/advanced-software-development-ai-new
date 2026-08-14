@@ -1,0 +1,23 @@
+{% block nav %}
+  <nav>
+    <ul>
+      <li>
+        <a href="/admin">
+          <img
+            class="logo"
+            src="/assets/images/trail-guide-logo.svg"
+            alt="Trail Guide Admin"
+          />
+        </a>
+      </li>
+      <li>
+        <a href="/admin"><strong>Admin</strong></a>
+      </li>
+    </ul>
+    <ul>
+      <li><a href="/admin/trails/new" role="button">+ New Trail</a></li>
+      <li><a href="/" class="secondary">View Site</a></li>
+      <li><a href="/logout" class="contrast">Log Out</a></li>
+    </ul>
+  </nav>
+{% endblock %}
