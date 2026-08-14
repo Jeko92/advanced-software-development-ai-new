@@ -38,6 +38,8 @@
     "@types/nunjucks": "^3.2.6",
     "@types/sanitize-html": "^2.16.1",
     "prettier-plugin-jinja-template": "^2.2.0",
+    "prettier-plugin-sql": "^0.20.0",
+    "prettier-plugin-embed": "^0.5.1",
     "tsx": "^4.23.5",
     "typescript": "^6.0.3"
   }

@@ -1,5 +1,6 @@
 -- seeddb.sql
 DROP TABLE IF EXISTS posting;
+
 DROP TABLE IF EXISTS authors;
 
 CREATE TABLE authors (

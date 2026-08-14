@@ -9,31 +9,34 @@ let db: Database | null = null;
 export async function connectDB() {
   db = await open({ filename: db_path, driver: sqlite3.Database });
 
-  await db.exec(`CREATE TABLE IF NOT EXISTS posting
-                 (
-                   id        INTEGER PRIMARY KEY AUTOINCREMENT,
-                   image     TEXT      NOT NULL,
-                   author    TEXT      NOT NULL,
-                   createdAt TIMESTAMP NOT NULL,
-                   teaser    TEXT      NOT NULL,
-                   title     TEXT      NOT NULL,
-                   content   TEXT      NOT NULL,
-                   slug      TEXT      NOT NULL
-                 );`);
+  await db.exec(/* sql */ `
+    CREATE TABLE IF NOT EXISTS posting (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      image TEXT NOT NULL,
+      author TEXT NOT NULL,
+      createdAt TIMESTAMP NOT NULL,
+      teaser TEXT NOT NULL,
+      title TEXT NOT NULL,
+      content TEXT NOT NULL,
+      slug TEXT NOT NULL
+    );
+  `);
 
-  await db.exec(`CREATE TABLE IF NOT EXISTS authors
-                 (
-                   id   INTEGER PRIMARY KEY AUTOINCREMENT,
-                   name TEXT NOT NULL
-                 );`);
+  await db.exec(/* sql */ `
+    CREATE TABLE IF NOT EXISTS authors (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      name TEXT NOT NULL
+    );
+  `);
 
   // SQLite has no `ADD COLUMN IF NOT EXISTS`; ignore the "duplicate column"
   // error so this stays safe to run on every startup, like the CREATE TABLE
   // statements above.
   try {
-    await db.exec(
-      'ALTER TABLE posting ADD COLUMN author_id INTEGER REFERENCES authors(id);',
-    );
+    await db.exec(/* sql */ `
+      ALTER TABLE posting
+      ADD COLUMN author_id INTEGER REFERENCES authors (id);
+    `);
   } catch (err) {
     if (!(err as Error).message.includes('duplicate column name')) {
       throw err;

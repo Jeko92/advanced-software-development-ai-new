@@ -31,12 +31,29 @@ export function slugify(title: string): string {
 
 export async function loadPosts(): Promise<Post[]> {
   const db = await getDB();
-  return db.all<Post[]>('SELECT * FROM posting ORDER BY createdAt DESC');
+  return db.all<Post[]>(/* sql */ `
+    SELECT
+      *
+    FROM
+      posting
+    ORDER BY
+      createdAt DESC
+  `);
 }
 
 export async function getPostBySlug(slug: string): Promise<Post | undefined> {
   const db = getDB();
-  return db.get<Post>('SELECT * FROM posting WHERE slug = ?', slug);
+  return db.get<Post>(
+    /* sql */ `
+      SELECT
+        *
+      FROM
+        posting
+      WHERE
+        slug = ?
+    `,
+    slug,
+  );
 }
 
 export async function addPost(post: Post): Promise<void> {
@@ -49,8 +66,20 @@ export async function addPost(post: Post): Promise<void> {
   }
 
   await db.run(
-    `INSERT INTO posting (image, author, createdAt, teaser, title, content, slug)
-     VALUES (?, ?, ?, ?, ?, ?, ?)`,
+    /* sql */ `
+      INSERT INTO
+        posting (
+          image,
+          author,
+          createdAt,
+          teaser,
+          title,
+          content,
+          slug
+        )
+      VALUES
+        (?, ?, ?, ?, ?, ?, ?)
+    `,
     post.image,
     post.author,
     post.createdAt,
@@ -80,15 +109,19 @@ export async function updatePost(
   const newSlug = changes.title ? slugify(changes.title) : existing.slug;
 
   await db.run(
-    `UPDATE posting
-     SET image     = ?,
-         author    = ?,
-         createdAt = ?,
-         teaser    = ?,
-         title     = ?,
-         content   = ?,
-         slug      = ?
-     WHERE id = ?`,
+    /* sql */ `
+      UPDATE posting
+      SET
+        image = ?,
+        author = ?,
+        createdAt = ?,
+        teaser = ?,
+        title = ?,
+        content = ?,
+        slug = ?
+      WHERE
+        id = ?
+    `,
     updated.image,
     updated.author,
     updated.createdAt,
@@ -102,7 +135,14 @@ export async function updatePost(
 
 export async function deletePost(slug: string): Promise<void> {
   const db = getDB();
-  const result = await db.run('DELETE FROM posting WHERE slug = ?', slug);
+  const result = await db.run(
+    /* sql */ `
+      DELETE FROM posting
+      WHERE
+        slug = ?
+    `,
+    slug,
+  );
 
   if (!result.changes) {
     throw new Error(`Post with slug "${slug}" not found`);
@@ -126,8 +166,21 @@ export async function createBlogEntry(
   }
 
   const result = await db.run(
-    `INSERT INTO posting (image, author, author_id, createdAt, teaser, title, content, slug)
-     VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+    /* sql */ `
+      INSERT INTO
+        posting (
+          image,
+          author,
+          author_id,
+          createdAt,
+          teaser,
+          title,
+          content,
+          slug
+        )
+      VALUES
+        (?, ?, ?, ?, ?, ?, ?, ?)
+    `,
     entry.image,
     entry.author,
     entry.author_id ?? null,
@@ -153,7 +206,17 @@ export async function updateBlogEntry(
   changes: Partial<Omit<Post, 'id' | 'slug'>>,
 ): Promise<void> {
   const db = getDB();
-  const existing = await db.get<Post>('SELECT * FROM posting WHERE id = ?', id);
+  const existing = await db.get<Post>(
+    /* sql */ `
+      SELECT
+        *
+      FROM
+        posting
+      WHERE
+        id = ?
+    `,
+    id,
+  );
 
   if (!existing) {
     throw new Error(`Post with id ${id} not found`);
@@ -169,16 +232,20 @@ export async function updateBlogEntry(
   const newSlug = changes.title ? slugify(changes.title) : existing.slug;
 
   await db.run(
-    `UPDATE posting
-     SET image     = ?,
-         author    = ?,
-         author_id = ?,
-         createdAt = ?,
-         teaser    = ?,
-         title     = ?,
-         content   = ?,
-         slug      = ?
-     WHERE id = ?`,
+    /* sql */ `
+      UPDATE posting
+      SET
+        image = ?,
+        author = ?,
+        author_id = ?,
+        createdAt = ?,
+        teaser = ?,
+        title = ?,
+        content = ?,
+        slug = ?
+      WHERE
+        id = ?
+    `,
     updated.image,
     updated.author,
     updated.author_id ?? null,
@@ -196,7 +263,14 @@ export async function updateBlogEntry(
  */
 export async function deleteBlogEntry(id: number): Promise<void> {
   const db = getDB();
-  const result = await db.run('DELETE FROM posting WHERE id = ?', id);
+  const result = await db.run(
+    /* sql */ `
+      DELETE FROM posting
+      WHERE
+        id = ?
+    `,
+    id,
+  );
 
   if (!result.changes) {
     throw new Error(`Post with id ${id} not found`);
@@ -208,12 +282,16 @@ export async function deleteBlogEntry(id: number): Promise<void> {
  */
 export async function loadPostsWithAuthors(): Promise<PostWithAuthor[]> {
   const db = getDB();
-  return db.all<PostWithAuthor[]>(
-    `SELECT posting.*, authors.name AS authorName
-     FROM posting
-     LEFT JOIN authors ON posting.author_id = authors.id
-     ORDER BY posting.createdAt DESC`,
-  );
+  return db.all<PostWithAuthor[]>(/* sql */ `
+    SELECT
+      posting.*,
+      authors.name AS authorName
+    FROM
+      posting
+      LEFT JOIN authors ON posting.author_id = authors.id
+    ORDER BY
+      posting.createdAt DESC
+  `);
 }
 
 export async function getPostWithNeighbors(
