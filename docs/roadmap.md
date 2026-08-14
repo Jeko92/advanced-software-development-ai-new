@@ -4,7 +4,7 @@
 - [ ] Part 01 — Side Projects (ongoing)
 - [x] Part 0 — Welcome / Leveling
 - [x] Part 1 — TypeScript (Basics, Client-Side, Advanced Setup, Advanced, Recap)
-- [ ] Part 2 — Web Backend Intro
+- [x] Part 2 — Web Backend Intro
 - [ ] Part 3 — Software Design
 - [ ] Part 4 — NestJS
 - [ ] Part 5 — DevOps
