@@ -1,17 +1,9 @@
 {
+  "extends": "@bootcamp/tsconfig/node.json",
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "lib": ["esnext"],
-    "types": ["node"],
-
-    "strict": true,
-
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "sourceMap": true
+    "rootDir": "./src",
+    "outDir": "./dist"
   },
-  "exclude": ["node_modules"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }

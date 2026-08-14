@@ -2,8 +2,8 @@ import { Database, open } from 'sqlite';
 import sqlite3 from 'sqlite3';
 import path from 'node:path';
 
-const DB_FILE = process.env.DB_PATH
-  ? path.resolve(process.env.DB_PATH)
+const DB_FILE = process.env['DB_PATH']
+  ? path.resolve(process.env['DB_PATH'])
   : path.join(process.cwd(), 'db', 'blog.db');
 
 let db: Database | null = null;

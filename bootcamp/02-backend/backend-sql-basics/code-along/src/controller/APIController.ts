@@ -1,6 +1,7 @@
 import type { Request, Response } from 'express';
-import * as blogModel from '../models/blogModel';
-import allBlogsResponse from '../views/api/allBlogsResponse';
+import * as blogModel from '../models/blogModel.ts';
+import type { BlogEntrySearchFilters } from '../models/blogModel.ts';
+import allBlogsResponse from '../views/api/allBlogsResponse.ts';
 
 export async function getAllBlogs(_req: Request, res: Response) {
   try {
@@ -16,12 +17,14 @@ export async function searchBlogs(req: Request, res: Response) {
   try {
     const { author, search, direction, limit } = req.query;
 
-    const blogs = await blogModel.searchBlogEntries({
-      author: typeof author === 'string' ? author : undefined,
-      search: typeof search === 'string' ? search : undefined,
+    const filters: BlogEntrySearchFilters = {
       direction: direction === 'ASC' ? 'ASC' : 'DESC',
-      limit: typeof limit === 'string' ? Number(limit) : undefined,
-    });
+    };
+    if (typeof author === 'string') filters.author = author;
+    if (typeof search === 'string') filters.search = search;
+    if (typeof limit === 'string') filters.limit = Number(limit);
+
+    const blogs = await blogModel.searchBlogEntries(filters);
 
     res.status(200).json(allBlogsResponse(blogs));
   } catch (err) {

@@ -1,7 +1,7 @@
-import express from 'express';
-import * as APIController from '../controller/APIController';
+import express, { type Router } from 'express';
+import * as APIController from '../controller/APIController.ts';
 
-const APIRouter = express.Router();
+const APIRouter: Router = express.Router();
 
 APIRouter.get('/blog-entries', APIController.getAllBlogs);
 APIRouter.get('/blog-entries/search', APIController.searchBlogs);
