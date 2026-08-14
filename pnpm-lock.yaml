@@ -246,9 +246,15 @@ importers:
       '@types/sanitize-html':
         specifier: ^2.16.1
         version: 2.16.1
+      prettier-plugin-embed:
+        specifier: ^0.5.1
+        version: 0.5.1
       prettier-plugin-jinja-template:
         specifier: ^2.2.0
         version: 2.2.0(prettier@3.9.6)
+      prettier-plugin-sql:
+        specifier: ^0.20.0
+        version: 0.20.0(prettier@3.9.6)
       tsx:
         specifier: ^4.23.5
         version: 4.23.5
