@@ -1,0 +1,6 @@
+{
+  "version": "1",
+  "name": "backend-sql-advanced-code-along",
+  "type": "collection",
+  "ignore": ["node_modules", ".git"]
+}
