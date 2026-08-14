@@ -1,0 +1,15 @@
+meta {
+  name: Search Blog Entries by Title (LIKE)
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{baseUrl}}/api/blog-entries/search?search=coffee
+  body: none
+  auth: none
+}
+
+params:query {
+  search: coffee
+}
