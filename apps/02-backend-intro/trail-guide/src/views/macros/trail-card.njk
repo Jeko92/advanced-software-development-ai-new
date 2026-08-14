@@ -1,0 +1,26 @@
+{% macro trailCard(trail) %}
+  <article>
+    <header>
+      <img src="{{ trail.image_url }}" />
+      <h3>
+        <a href="/trails/{{ trail.slug }}"> {{ trail.title }} </a>
+      </h3>
+      <small> {{ trail.region_name }} • {{ trail.region_country }} </small>
+    </header>
+    <p>
+      Difficulty:
+      <strong>{{ trail.difficulty }}</strong>
+    </p>
+    <p>{{ trail.distance_km }} km</p>
+    {% if trail.tags.length %}
+      <p>
+        {% for tag in trail.tags %}
+          <mark>{{ tag.name }}</mark>
+        {% endfor %}
+      </p>
+    {% endif %}
+    <footer>
+      <a href="/trails/{{ trail.slug }}"> Read more → </a>
+    </footer>
+  </article>
+{% endmacro %}

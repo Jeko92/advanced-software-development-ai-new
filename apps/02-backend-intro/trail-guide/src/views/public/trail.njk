@@ -1,0 +1,58 @@
+{% extends "layouts/_base.njk" %}
+
+{% block main_content %}
+  <article>
+    <header>
+      {% if trail.image_url %}
+        <img
+          src="{{ trail.image_url }}"
+          alt="{{ trail.title }}"
+          class="trail-hero-img"
+        />
+      {% endif %}
+      <h1>{{ trail.title }}</h1>
+      <p>
+        <strong>{{ trail.region_name }}</strong>
+        • {{ trail.region_country }}
+      </p>
+      <p>
+        Difficulty:
+        <strong>{{ trail.difficulty }}</strong>
+      </p>
+      <p>
+        Distance:
+        <strong>{{ trail.distance_km }} km</strong>
+      </p>
+    </header>
+    {{ trail.description | safe }}
+    {% if tags.length %}
+      <p>
+        {% for tag in tags %}
+          <mark>{{ tag.name }}</mark>
+        {% endfor %}
+      </p>
+    {% endif %}
+    <footer>
+      <p>Published: {{ trail.createdAt }}</p>
+    </footer>
+  </article>
+
+  <nav aria-label="Trail navigation">
+    <ul class="region-navigation">
+      <li>
+        {% if prevTrail %}
+          <a role="button" href="/trails/{{ prevTrail.slug }}"
+            >← {{ prevTrail.title }}</a
+          >
+        {% endif %}
+      </li>
+      <li>
+        {% if nextTrail %}
+          <a role="button" href="/trails/{{ nextTrail.slug }}"
+            >{{ nextTrail.title }} →</a
+          >
+        {% endif %}
+      </li>
+    </ul>
+  </nav>
+{% endblock %}

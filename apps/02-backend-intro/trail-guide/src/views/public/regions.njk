@@ -1,0 +1,28 @@
+{% extends "layouts/_base.njk" %}
+
+{% block main_content %}
+  <h1>Regions</h1>
+
+  <p>Browse hiking destinations by region.</p>
+  <section>
+    <div class="grid">
+      {% if regions.length %}
+        {% for region in regions %}
+          <article>
+            <header>
+              {% if region.image_url %}
+                <img src="{{ region.image_url }}" alt="{{ region.name }}" />
+              {% endif %}
+              <h2>{{ region.name }}</h2>
+              <small>{{ region.country }}</small>
+            </header>
+            <p>{{ region.description }}</p>
+            <footer>
+              <a href="/regions/{{ region.slug }}"> Read more → </a>
+            </footer>
+          </article>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </section>
+{% endblock %}

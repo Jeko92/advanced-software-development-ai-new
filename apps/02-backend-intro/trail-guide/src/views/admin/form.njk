@@ -1,0 +1,170 @@
+{% extends "layouts/_admin-base.njk" %}
+
+{% block main_content %}
+  <h1>{{ 'Edit trail' if trail else 'Create new trail' }}</h1>
+  <form
+    method="POST"
+    action="{{ '/admin/trails/' + trail.id|string if trail else '/admin/trails' }}"
+  >
+    <!-- Trail title -->
+    <div>
+      <label for="title">Title</label>
+      <input
+        type="text"
+        id="title"
+        name="title"
+        placeholder="e.g. Partnach Gorge Loop"
+        value="{{ trail.title | default('') }}"
+        required
+      />
+    </div>
+
+    <div class="field-row">
+      <!-- Trail region -->
+      <div class="field-col">
+        <label for="region_id">Region</label>
+        <select id="region_id" name="region_id">
+          <option value="">Choose a region</option>
+          {% for region in regions %}
+            <option
+              value="{{ region.id }}"
+              {{ 'selected' if trail and region.id == trail.region_id }}
+            >
+              {{ region.name }}
+            </option>
+          {% endfor %}
+        </select>
+        <details>
+          <summary>Add a new region instead</summary>
+          <label for="new_region_name">New region name</label>
+          <input type="text" id="new_region_name" name="new_region_name" />
+          <label for="new_region_country">New region country</label>
+          <input
+            type="text"
+            id="new_region_country"
+            name="new_region_country"
+          />
+          <label for="new_region_description">New region description</label>
+          <textarea
+            id="new_region_description"
+            name="new_region_description"
+            rows="5"
+            placeholder="Describe new Region..."
+          ></textarea>
+        </details>
+      </div>
+      <!-- Trail difficulty -->
+      <div class="field-col">
+        <label for="difficulty">Difficulty</label>
+        <select id="difficulty" name="difficulty" required>
+          <option value="">Choose difficulty</option>
+          <option
+            value="easy"
+            {{ 'selected' if trail and trail.difficulty == 'easy' }}
+          >
+            Easy
+          </option>
+          <option
+            value="moderate"
+            {{ 'selected' if trail and trail.difficulty == 'moderate' }}
+          >
+            Moderate
+          </option>
+          <option
+            value="hard"
+            {{ 'selected' if trail and trail.difficulty == 'hard' }}
+          >
+            Hard
+          </option>
+        </select>
+      </div>
+
+      <!-- Trail distance -->
+      <div class="field-col">
+        <label for="distance">Distance</label>
+        <input
+          type="number"
+          id="distance"
+          name="distance"
+          placeholder="e.g. 4.2"
+          value="{{ trail.distance_km | default('') }}"
+          required
+          min="0"
+          step="0.1"
+        />
+      </div>
+    </div>
+
+    <!-- Trail description -->
+    <div>
+      <label for="description-editor">Description</label>
+      <div id="description-editor">
+        {{ trail.description | default('') | safe }}
+      </div>
+      <input type="hidden" id="description" name="description" />
+    </div>
+
+    <!-- Trail image -->
+    <div>
+      <label for="image_url">Image URL</label>
+      <input
+        type="text"
+        id="image_url"
+        name="image_url"
+        placeholder="https://images.unsplash.com/photo-..."
+        value="{{ trail.image_url | default('') }}"
+        required
+      />
+    </div>
+
+    <!-- Trail tags -->
+    <fieldset>
+      <legend>Tags</legend>
+      {% for tag in tags %}
+        <label for="tag-{{ tag.id }}">
+          <input
+            type="checkbox"
+            id="tag-{{ tag.id }}"
+            name="tags"
+            value="{{ tag.id }}"
+            {{ 'checked' if tag.id in selectedTagIds }}
+          />
+          {{ tag.name }}
+        </label>
+      {% endfor %}
+    </fieldset>
+
+    <input
+      type="submit"
+      value="{{ 'Update Trail' if trail else 'Create Trail' }}"
+    />
+    <a href="/admin" role="button" class="secondary">Cancel</a>
+  </form>
+{% endblock %}
+
+{% block scripts %}
+  <link href="/vendor/quill/quill.snow.css" rel="stylesheet" />
+  <script src="/vendor/quill/quill.js"></script>
+  <script>
+    const quill = new Quill('#description-editor', {
+      theme: 'snow',
+      modules: {
+        toolbar: [
+          [{ header: [1, 2, 3, false] }],
+          ['bold', 'italic'],
+          ['link'],
+          [{ list: 'ordered' }, { list: 'bullet' }],
+        ],
+      },
+    });
+
+    document.querySelector('form').addEventListener('submit', (e) => {
+      if (quill.getText().trim() === '') {
+        e.preventDefault();
+        alert('Description is required');
+        return;
+      }
+      document.getElementById('description').value = quill.root.innerHTML;
+    });
+  </script>
+{% endblock %}

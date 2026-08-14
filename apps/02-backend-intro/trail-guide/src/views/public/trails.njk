@@ -1,0 +1,52 @@
+{% extends "layouts/_base.njk" %}
+{% from "macros/trail-card.njk" import trailCard %}
+{% from "macros/trail-filter-form.njk" import trailFilterForm %}
+
+{% block hero %}
+  <header class="hero-home">
+    <hgroup>
+      <h1>Trails List</h1>
+    </hgroup>
+  </header>
+{% endblock %}
+{% block main_content %}
+  <hr />
+  {{ trailFilterForm('/trails', regions, filters) }}
+  <section class="grid">
+    {% if trails.length %}
+
+      {% for trail in trails %}
+        {{ trailCard(trail) }}
+      {% endfor %}
+    {% else %}
+      <article>
+        <p>No trails available yet.</p>
+      </article>
+    {% endif %}
+  </section>
+
+  <nav aria-label="Trails pagination">
+    <ul class="region-navigation">
+      <li>
+        {% if pagination.page > 1 %}
+          <a
+            role="button"
+            href="/trails?q={{ filters.q | default('') }}&region={{ filters.region | default('') }}&difficulty={{ filters.difficulty | default('') }}&maxDistance={{ filters.maxDistance | default('') }}&page={{ pagination.page - 1 }}&pageSize={{ pagination.pageSize }}"
+          >
+            ← Prev
+          </a>
+        {% endif %}
+      </li>
+      <li>
+        {% if pagination.page * pagination.pageSize < pagination.total %}
+          <a
+            role="button"
+            href="/trails?q={{ filters.q | default('') }}&region={{ filters.region | default('') }}&difficulty={{ filters.difficulty | default('') }}&maxDistance={{ filters.maxDistance | default('') }}&page={{ pagination.page + 1 }}&pageSize={{ pagination.pageSize }}"
+          >
+            Next →
+          </a>
+        {% endif %}
+      </li>
+    </ul>
+  </nav>
+{% endblock %}

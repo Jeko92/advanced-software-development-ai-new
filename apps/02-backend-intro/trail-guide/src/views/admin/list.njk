@@ -1,0 +1,66 @@
+{% extends "layouts/_admin-base.njk" %}
+{% from "macros/trail-filter-form.njk" import trailFilterForm %}
+
+{% block main_content %}
+
+  {{ trailFilterForm('/admin', regions, filters) }}
+
+  {% if trails.length %}
+    <div class="table-scroll">
+      <table class="striped">
+        <thead>
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Region</th>
+            <th scope="col">Country</th>
+            <th scope="col">Difficulty</th>
+            <th scope="col">Distance</th>
+            <th scope="col">Description</th>
+            <th scope="col">Image</th>
+            <th scope="col">Created At</th>
+            <th scope="col">---</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {% for trail in trails %}
+            <tr>
+              <td>{{ trail.title }}</td>
+              <td>{{ trail.region_name }}</td>
+              <td>{{ trail.region_country }}</td>
+              <td>{{ trail.difficulty }}</td>
+              <td>{{ trail.distance_km }}</td>
+              <td>
+                <small class="admin-desc">
+                  {{ trail.description | safe }}
+                </small>
+              </td>
+              <td class="admin-list-img">
+                <img src="{{ trail.image_url }}" alt="{{ trail.title }}" />
+              </td>
+              <td>{{ trail.createdAt }}</td>
+              <td>
+                <div>
+                  <a
+                    class="contrast"
+                    role="button"
+                    href="/admin/trails/{{ trail.id }}/edit"
+                    >Edit
+                  </a>
+                  <form
+                    method="POST"
+                    action="/admin/trails/{{ trail.id }}/delete"
+                  >
+                    <button type="submit" class="danger">Delete</button>
+                  </form>
+                </div>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% else %}
+    <h1>No trails found</h1>
+  {% endif %}
+{% endblock %}

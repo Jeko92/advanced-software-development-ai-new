@@ -1,0 +1,155 @@
+html {
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
+}
+
+body {
+  padding: 1.5rem;
+  min-block-size: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+main {
+  flex: 1;
+}
+
+.logo {
+  block-size: 2rem;
+  inline-size: 2rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.region-navigation {
+  inline-size: 100%;
+}
+
+.region-navigation li {
+  flex: 0 0 auto;
+}
+
+.region-navigation li:last-child {
+  margin-left: auto;
+}
+
+.footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo {
+  block-size: 5em;
+  inline-size: 5rem;
+  border-radius: 50%;
+}
+
+main .grid {
+  align-items: stretch;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+main .grid > article {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+}
+
+main .grid > article header {
+  padding: 0;
+  margin: 0;
+}
+
+main .grid > article header img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+}
+
+main .grid > article header h3 {
+  margin: 0.75rem 1rem 0.25rem;
+  min-height: 3.2em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+main .grid > article header small {
+  display: block;
+  margin: 0 1rem 1rem;
+  color: var(--pico-muted-color);
+}
+
+main .grid > article p {
+  margin: 0 1rem 0.5rem;
+}
+
+main .grid > article p:first-of-type {
+  margin-top: 0.5rem;
+}
+
+main .grid > article > footer {
+  margin-left: 0;
+}
+
+.admin-list-img img {
+  width: 100%;
+  min-width: 200px;
+  max-width: 300px;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+}
+
+.admin-desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  max-width: 320px;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+.trail-hero-img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: var(--pico-border-radius);
+  display: block;
+}
+
+.field-row {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.field-col {
+  flex: 1;
+  min-width: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.ql-toolbar [role='button'] {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 3px 5px;
+  color: inherit;
+  font-weight: normal;
+}
