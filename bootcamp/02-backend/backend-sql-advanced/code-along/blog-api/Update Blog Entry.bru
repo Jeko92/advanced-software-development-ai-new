@@ -1,0 +1,26 @@
+meta {
+  name: Update Blog Entry
+  type: http
+  seq: 9
+}
+
+put {
+  url: {{baseUrl}}/api/blog-entries/1
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "title": "Brewing the perfect coffee (updated)",
+    "teaser": "A short guide to better mornings.",
+    "authorId": 1,
+    "createdAt": "2026-01-05",
+    "image": "/images/coffee.jpg",
+    "content": "Coffee is best brewed slowly, with freshly ground beans and water just off the boil."
+  }
+}
+
+assert {
+  res.status: eq 200
+}

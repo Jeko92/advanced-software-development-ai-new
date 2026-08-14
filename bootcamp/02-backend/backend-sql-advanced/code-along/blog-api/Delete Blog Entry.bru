@@ -1,0 +1,15 @@
+meta {
+  name: Delete Blog Entry
+  type: http
+  seq: 10
+}
+
+delete {
+  url: {{baseUrl}}/api/blog-entries/6
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+}

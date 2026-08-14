@@ -1,0 +1,53 @@
+{
+  "name": "@bootcamp/trail-guide",
+  "version": "1.0.0",
+  "description": "trail-guide project which is second recap-project of the neufische's Advanced Sopftware Devlopment with AI Bootcamp",
+  "type": "module",
+  "keywords": [
+    "Express",
+    "MVC",
+    "SQL",
+    "Nunjucks",
+    "Templating"
+  ],
+  "license": "ISC",
+  "author": "",
+  "scripts": {
+    "dev": "tsx --watch --env-file=.env src/app.ts",
+    "build": "tsc",
+    "start": "node --env-file=.env dist/app.js",
+    "db:seed": "sqlite3 \"${DB_PATH:-data/trail-guide.db}\" < data/seed.sql",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "tsc --noEmit",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write ."
+  },
+  "dependencies": {
+    "@picocss/pico": "^2.1.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "nunjucks": "^3.2.4",
+    "quill": "^2.0.3",
+    "sanitize-html": "^2.17.6",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^6.0.1"
+  },
+  "devDependencies": {
+    "@bootcamp/eslint-config": "workspace:*",
+    "@bootcamp/prettier-config": "workspace:*",
+    "@bootcamp/tsconfig": "workspace:*",
+    "@types/cookie-parser": "^1.4.10",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.1.2",
+    "@types/nunjucks": "^3.2.6",
+    "@types/sanitize-html": "^2.16.1",
+    "prettier-plugin-jinja-template": "^2.2.0",
+    "prettier-plugin-sql": "^0.20.0",
+    "prettier-plugin-embed": "^0.5.1",
+    "tsx": "^4.23.9",
+    "typescript": "^6.0.3"
+  }
+}

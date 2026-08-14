@@ -1,7 +1,7 @@
-export type mediaType = "mp3" | "vinyl" | "CD"; // "mp3", "vinyl", "CD"
+export type mediaType = 'mp3' | 'vinyl' | 'CD'; // "mp3", "vinyl", "CD"
 
 export type MP3Media = {
-  type: "mp3"; // disciminator
+  type: 'mp3'; // disciminator
   bitrate: number;
 };
 
@@ -13,11 +13,11 @@ export type Media = {
 } & (
   | MP3Media
   | {
-      type: "vinyl"; // disciminator
-      recordType: "LP" | "EP" | "SP";
+      type: 'vinyl'; // disciminator
+      recordType: 'LP' | 'EP' | 'SP';
     }
   | {
-      type: "CD"; // disciminator
+      type: 'CD'; // disciminator
       hasPrint: boolean;
     }
 );

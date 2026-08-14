@@ -1,0 +1,32 @@
+import type { Request, Response } from 'express';
+import * as postModel from '../models/postModel.ts';
+import { closeDB } from '../db/database.ts';
+
+export async function getAllPosts(_req: Request, res: Response) {
+  const posts = await postModel.getAllPosts();
+
+  res.json(posts);
+}
+
+export async function getPostById(req: Request<{ id: string }>, res: Response) {
+  const post = await postModel.getPostById(Number(req.params.id));
+
+  if (!post) {
+    res.status(404).json({ error: 'Post not found' });
+    return;
+  }
+
+  res.json(post);
+}
+
+export async function handleShutdown(signalName: string): Promise<void> {
+  console.log(`Received signal: ${signalName}`);
+  try {
+    await closeDB();
+    console.log('Database connection closed successfully.');
+  } catch (err) {
+    console.error(`Error closing database: ${err}`);
+  } finally {
+    process.exit(0);
+  }
+}

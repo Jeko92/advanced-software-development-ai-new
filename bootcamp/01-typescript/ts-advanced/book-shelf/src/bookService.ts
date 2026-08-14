@@ -102,7 +102,11 @@ export const updateBook = async (
 export const parseIsbn = (isbn: string): IsbnParts => {
   const [group, publisher, titleCode] = isbn.split('-');
 
-  if (group === undefined || publisher === undefined || titleCode === undefined) {
+  if (
+    group === undefined ||
+    publisher === undefined ||
+    titleCode === undefined
+  ) {
     throw new Error(`"${isbn}" is not a valid group-publisher-titleCode ISBN`);
   }
 
