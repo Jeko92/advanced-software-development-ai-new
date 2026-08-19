@@ -18,9 +18,7 @@
         value="{{ author }}"
       />
 
-      <button type="submit">
-        Search
-      </button>
+      <button type="submit">Search</button>
     </form>
   </section>
 
@@ -31,7 +29,7 @@
       {% for quote in quotes %}
         {{ cards.quoteCard(quote) }}
       {% else %}
-        <p>No quotes found{% if author %} for "{{ author }}"{% endif %}.</p>
+        <p>No quotes found{% if author %}for "{{ author }}"{% endif %}.</p>
       {% endfor %}
     </div>
   </section>
@@ -40,9 +38,7 @@
     <h2>Random Quote</h2>
 
     <a href="/quotes/random">
-      <button type="button">
-        Get Random Quote
-      </button>
+      <button type="button">Get Random Quote</button>
     </a>
   </section>
 {% endblock %}

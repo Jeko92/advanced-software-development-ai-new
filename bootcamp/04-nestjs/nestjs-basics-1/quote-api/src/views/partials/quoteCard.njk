@@ -1,11 +1,7 @@
 {% macro quoteCard(quote) %}
   <article class="quote-card">
-    <blockquote>
-      "{{ quote.quote }}"
-    </blockquote>
+    <blockquote>"{{ quote.quote }}"</blockquote>
 
-    <footer>
-      — {{ quote.author }}
-    </footer>
+    <footer>— {{ quote.author }}</footer>
   </article>
 {% endmacro %}

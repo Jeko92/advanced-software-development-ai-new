@@ -5,7 +5,7 @@ const port = process.env['PORT'] ?? 3232;
 @Injectable()
 class AppService {
   generateMessage(): string {
-    return "Hello World";
+    return 'Hello World';
   }
 }
 
