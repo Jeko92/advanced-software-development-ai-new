@@ -12,3 +12,4 @@ allowBuilds:
   esbuild: true
   protobufjs: false
   sqlite3: true
+  unrs-resolver: false
