@@ -2,15 +2,12 @@ import baseConfig from '@bootcamp/prettier-config' with { type: 'json' };
 
 export default {
   ...baseConfig,
-  plugins: ['prettier-plugin-embed', 'prettier-plugin-sql'],
-  embeddedSqlTags: ['sql'],
-  language: 'sqlite',
-  keywordCase: 'upper',
+  plugins: ['prettier-plugin-jinja-template'],
   overrides: [
     {
-      files: ['*.sql'],
+      files: ['*.njk'],
       options: {
-        parser: 'sql',
+        parser: 'jinja-template',
       },
     },
   ],

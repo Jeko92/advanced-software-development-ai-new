@@ -6,11 +6,11 @@
     "dev": "nodemon",
     "build": "tsc",
     "start": "node dist/app.js",
-    "lint": "turbo run lint",
-    "lint:fix": "turbo run lint:fix",
-    "typecheck": "turbo run typecheck",
-    "format:check": "turbo run format:check",
-    "format:write": "turbo run format:write"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "tsc --noEmit",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write ."
   },
   "keywords": [],
   "author": "",
@@ -26,6 +26,7 @@
     "@bootcamp/eslint-config": "workspace:*",
     "@bootcamp/prettier-config": "workspace:*",
     "@bootcamp/tsconfig": "workspace:*",
+    "prettier-plugin-jinja-template": "^2.2.0",
     "@types/node": "^26.2.0",
     "nodemon": "^3.1.14",
     "typescript": "^6.0.3"

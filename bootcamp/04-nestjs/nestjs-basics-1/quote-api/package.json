@@ -26,6 +26,7 @@
     "@bootcamp/eslint-config": "workspace:*",
     "@bootcamp/prettier-config": "workspace:*",
     "@bootcamp/tsconfig": "workspace:*",
+    "prettier-plugin-jinja-template": "^2.2.0",
     "@types/express": "^5.0.6",
     "@types/node": "^26.2.0",
     "@types/nunjucks": "^3.2.6",
