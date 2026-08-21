@@ -9,6 +9,9 @@ packages:
   - 'packages/*'
   - 'playgrounds/*'
 allowBuilds:
+  '@scarf/scarf': false
+  better-sqlite3: true
   esbuild: true
   protobufjs: false
   sqlite3: true
+  unrs-resolver: false
