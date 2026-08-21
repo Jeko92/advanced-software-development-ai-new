@@ -1,0 +1,4 @@
+# .gitignore
+data/*.sqlite-journal
+data/*.sqlite-shm
+data/*.sqlite-wal
