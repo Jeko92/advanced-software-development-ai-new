@@ -24,10 +24,10 @@
 | 2.7 Recap Project                         | `apps/02-backend-intro`                         | 🟢         |
 | 3 Software Design                         | `bootcamp/03-software-design`                   | ⬜         |
 | 4 NestJS                                  | `bootcamp/04-nestjs`                            | ⬜         |
-| 4.1 NestJS Basics 1                       | `bootcamp/04-nestjs/nestjs-basiscs-1`           | ⬜         |
-| 4.2 NestJS Basics 2                       | `bootcamp/04-nestjs/nestjs-basiscs-2`           | ⬜         |
-| 4.3 NestJS TypeORM                        | `bootcamp/04-nestjs/nestjs-type-orm`            | ⬜         |
-| 4.4 NestJS RESTful Design                 | `bootcamp/04-nestjs/nestjs-restful-design`      | ⬜         |
+| 4.1 NestJS Basics 1                       | `bootcamp/04-nestjs/nestjs-basiscs-1`           | 🟢         |
+| 4.2 NestJS Basics 2                       | `bootcamp/04-nestjs/nestjs-basiscs-2`           | 🟢         |
+| 4.3 NestJS TypeORM                        | `bootcamp/04-nestjs/nestjs-type-orm`            | 🟢         |
+| 4.4 NestJS RESTful Design                 | `bootcamp/04-nestjs/nestjs-restful-design`      | 🟢         |
 | 4.5 NestJS Auth                           | `bootcamp/04-nestjs/nestjs-auth`                | ⬜         |
 | 4.6 NestJS OpenAPI & Swagger              | `bootcamp/04-nestjs/nestjs-openapi-and-swagger` | ⬜         |
 | 5 DevOps                                  | `bootcamp/05-devops`                            | ⬜         |
